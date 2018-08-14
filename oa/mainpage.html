@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+<!--
+-->
+</style>
+<link href="css/global.css" rel="stylesheet" type="text/css">
+<link href="css/zhuye.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+html, body{
+	height:100%;
+	overflow: hidden;
+
+}
+img{border:none;}
+*{font-family:'微软雅黑';font-size:12px;color:#626262;}
+dl,dt,dd{
+	display:block;
+	margin:0;
+	overflow: hidden;
+}
+a{text-decoration:none;}
+.topnav {
+	float: left;
+	overflow: hidden;
+}
+.ringhtnav {
+	float: right;
+	overflow: hidden;
+	padding-right: 40px;
+}
+
+#bg{
+	background-image:url(../js%E7%89%B9%E6%95%88/%E4%BC%B8%E7%BC%A9%E8%8F%9C%E5%8D%95/jiaoben3277/images/content/dotted.png);
+	overflow: hidden;
+}
+.ringhtnav a {
+	font-size: 14px;
+	font-weight: bold;
+	color: #FFFFFF;
+	line-height: 78px;
+	padding-right: 9px;
+	padding-left: 9px;
+}
+.ringhtnav span {
+	color: #999999;
+}
+.ringhtnav a:hover {
+	color: #0099FF;
+	text-decoration: underline;
+}
+.container{
+	width:100%;
+	height:100%;
+	margin:auto;
+	overflow: hidden;
+}
+.topnav a {
+	font-size: 12px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+.topnav  p img {
+	margin-left: 25px;
+}
+.topnav img {
+	margin-top: 20px;
+	margin-left: 50px;
+	overflow: hidden;
+}
+
+/*left*/
+.leftsidebar_box{
+	width:200px;
+	height:auto !important;
+	overflow:hidden !important;
+	height:100% !important;
+	background-color:#555555;
+}
+.line{
+	height:2px;
+	width:100%;
+	background-image:url(../js%E7%89%B9%E6%95%88/%E4%BC%B8%E7%BC%A9%E8%8F%9C%E5%8D%95/jiaoben3277/images/left/line_bg.png);
+	background-repeat:repeat-x;
+	overflow: hidden;
+}
+.leftsidebar_box dt{
+	padding-left:40px;
+	padding-right:10px;
+	background-repeat:no-repeat;
+	background-position:10px center;
+	color:#f5f5f5;
+	font-size:14px;
+	position:relative;
+	line-height:48px;
+	cursor:pointer;
+	overflow: hidden;
+}
+.leftsidebar_box dd{
+	background-color:#555555;
+	padding-left:40px;
+	height: 30px;
+	line-height: 30px;
+}
+.leftsidebar_box dd a{color:#f5f5f5;line-height:20px;}
+.leftsidebar_box dt img{
+	position:absolute;
+	right:10px;
+	top:20px;
+	margin-right: 10px;
+}
+.system_log dt{
+	background-image:url(images/left/system.png);
+	background-position: 30px;
+	padding-left: 60px;
+	overflow: hidden;
+}
+.custom dt{
+	background-image:url(images/left/custom.png);
+	padding-left: 60px;
+	background-position: 30px;
+	overflow: hidden;
+}
+.channel dt{
+	background-image:url(images/left/channel.png);
+	background-position: 30px;
+	padding-left: 60px;
+	overflow: hidden;
+}
+.app dt{
+	background-image:url(images/left/app.png);
+	background-position: 30px;
+	padding-left: 60px;
+	overflow: hidden;
+}
+.cloud dt{
+	background-image:url(images/left/cloud.png);
+	background-position: 30px;
+	padding-left: 60px;
+}
+.first_dd:hover {
+	background-color: #17C5CC;
+	display: list-item;
+}
+.syetem_management dt{
+	background-image:url(images/left/system_manage%20ment.png);
+	background-position: 30px;
+	padding-left: 60px;
+	overflow: hidden;
+}
+.source dt{
+	background-image:url(images/left/soure.png);
+	background-position: 30px;
+	padding-left: 60px;
+	overflow: hidden;
+}
+.statistics dt{
+	background-image:url(images/left/001.png);
+	background-position: 30px;
+	padding-left: 60px;
+}
+.STYLE4 {background-position: center center; font-size: 14px; background-image: url(../images/081.png); background-repeat: no-repeat;}
+.STYLE5 {
+	color: #FFFFFF
+}
+.STYLE7 {color: #FF6600}
+#xz{background: #17C5CC;}
+-->
+.aa>a{font-size: 14px;line-height: 48px;color: #F5F5F5;}
+</style>
+</head>
+
+<body>
+<table width="100%" border="0" cellspacing="0">
+    <tr>
+    <td height="78" colspan="2" valign="top" bgcolor="#333333">
+    <div class="topnav">
+    <p><a href="#">神的猪</a><img src="images/left/select_xl.png"></p>
+    <img src="images/logobianti.png"></div><div class="ringhtnav"><span><a href="#">邮件</a>丨</span><span><a href="#">签到</a>丨</span><span><a href="#">请假</a>丨</span><span><a href="#">设置</a>丨</span><span><a href="#">安全退出</a></span></div>
+    </td>
+   </tr>
+  <tr>
+    <td width="200" valign="top"><div class="leftsidebar_box">
+		<dl  class="system_log active">
+			<dt class="aa"><a href="mainpage.html">首页</a></dt>
+			
+		</dl>
+	
+		<dl class="custom">
+			<dt onClick="changeImage()">考勤<img src="images/left/select_xl01.png"></dt>
+			<dd class="first_dd"><a href="#">打卡</a></dd>
+			<dd class="first_dd"><a href="#">请假</a></dd>
+			<dd class="first_dd"><a href="#">出差</a></dd>
+			<dd class="first_dd"><a href="#">考勤记录</a></dd>
+		</dl>
+	
+		<dl class="channel">
+			<dt>邮件<img src="images/left/select_xl01.png"></dt>
+		  <dd class="first_dd"><a href="xiexin.html">写信</a></dd>
+		  <dd class="first_dd"><a href="youjian.html">收件箱</a></dd>
+		  <dd class="first_dd"><a href="#">已删除</a></dd>
+			<dd class="first_dd"><a href="#">垃圾箱</a></dd>
+			<dd class="first_dd"><a href="#">草稿箱</a></dd>
+            <dd class="first_dd"><a href="#">邮箱设置</a></dd>
+		</dl>
+	
+		<dl class="app">
+			<dt >任务<img src="images/left/select_xl01.png" border="0"></dt>
+		  <dd class="first_dd"><a href="renwu.html">接收的任务</a></dd>
+		  <dd class="first_dd"><a href="#">任务变更</a></dd>
+			<dd class="first_dd"><a href="#">完成的任务</a></dd>
+		</dl>
+	
+		<dl class="cloud">
+			<dt>文档管理<img src="images/left/select_xl01.png" border="0"></dt>
+		  <dd class="first_dd"><a href="#">接收文件</a></dd>
+          <dd class="first_dd"><a href="#">我的文件夹</a></dd>
+          <dd class="first_dd"><a href="#">公司内部文件</a></dd>
+		</dl>
+	
+		<dl class="syetem_management">
+			<dt>通信录<img src="images/left/select_xl01.png"></dt>
+		  <dd class="first_dd"><a href="#">公司高层</a></dd>
+			<dd class="first_dd"><a href="#">人事部</a></dd>
+			<dd class="first_dd"><a href="#">技术部</a></dd>
+			<dd class="first_dd"><a href="#">高新部</a></dd>
+			<dd class="first_dd"><a href="#">咨询部</a></dd>
+			<dd class="first_dd"><a href="#">后勤保障部</a></dd>
+		</dl>
+	
+		<dl class="source">
+			<dt>绩效管理<img src="images/left/select_xl01.png"></dt>
+		    <dd class="first_dd"><a href="#">本月任务</a></dd>
+			<dd class="first_dd"><a href="#">本月完成任务</a></dd>
+			<dd class="first_dd"><a href="#">以往任务</a></dd>
+		</dl>
+	
+		<dl class="statistics">
+			<dt>用户管理<img src="images/left/select_xl01.png"></dt>
+			<dd class="first_dd"><a href="#">修改密码</a></dd>
+            <dd class="first_dd"><a href="#">修改备注</a></dd>
+            <dd class="first_dd"><a href="#">注销用户</a></dd>
+            <dd class="first_dd"><a href="#">重新登录</a></dd>
+		</dl>
+	
+	</div>
+
+</div>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+$(".leftsidebar_box dt").css({"background-color":"#555555"});
+$(".leftsidebar_box dt img").attr("src","images/left/select_xl01.png");
+$(function(){
+	$(".leftsidebar_box dd").hide();
+	$(".leftsidebar_box dt").click(function(){
+		$(".leftsidebar_box dt").css({"background-color":"#555"})
+		$(this).css({"background-color": "#17c5cc"});
+		$(this).parent().find('dd').removeClass("menu_chioce");
+		$(".leftsidebar_box dt img").attr("src","images/left/select_xl01.png");
+		$(this).parent().find('img').attr("src","images/left/select_xl.png");
+		$(".menu_chioce").slideUp(); 
+		$(this).parent().find('dd').slideToggle();
+		$(this).parent().find('dd').addClass("menu_chioce");
+	});
+})
+</script></td>
+    <td valign="top"><div class="welcme">
+    <h3>神的猪，欢迎回来！</h3>
+    <span><a href="＃">2016-04-29 </a>　　　星期五　　  　　<a href="＃">天气：多云</a></span> </div>
+           <table width="100%"  cellspacing="25">
+  <tr>
+    <td valign="top">
+    <div class="task">
+    <div class="title">
+      <h3>今日任务</h3><p><a href="#">更多</a></p>
+    </div>
+    <div class="tasklist"><table width="100%" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="2%" align="center"><label>
+      <input type="checkbox" name="checkbox" id="checkbox">
+    </label></td>
+    <td width="6%" align="center">发件人</td>
+    <td width="6%" align="center">部门</td>
+    <td width="44%">任务主题</td>
+    <td width="10%" align="center">重要级别</td>
+    <td width="6%" align="center">状态</td>
+    <td width="12%" align="center">任务进度</td>
+    <td width="10%" align="center">时间</td>
+  </tr>
+  <tr>
+    <td align="center"><input type="checkbox" name="checkbox2" id="checkbox2"></td>
+    <td align="center"><a href="#">万敬明</a></td>
+    <td width="8%" align="center" class="text1">设计部</td>
+    <td><span class="text"><a href="#">宣传海报制作</a></span>-<span class="text1">-五一主题海报一张，突出主题，内容丰富</span></td>
+    <td align="center" class="text2">加急</td>
+    <td align="center">已接</td>
+    <td align="center"><img src="images/主页_03.gif"></td>
+    <td align="center">2016-04-28</td>
+  </tr>
+  <tr>
+    <td align="center"><input type="checkbox" name="checkbox3" id="checkbox3"></td>
+    <td align="center"><a href="#">张帅帅</a></td>
+    <td width="8%" align="center" class="text1">总经理</td>
+    <td><span class="text"><a href="#">店铺装修</a></span>--<span class="text1">天猫食品网站进行装修，要求美观</span></td>
+    <td align="center" class="txet3">紧急</td>
+    <td align="center">已接</td>
+    <td align="center"><img src="images/主页_03.gif"></td>
+    <td align="center">2016-04-03</td>
+  </tr>
+  <tr>
+    <td align="center"><input type="checkbox" name="checkbox4" id="checkbox4"></td>
+    <td align="center"><a href="#">杜少康</a></td>
+    <td width="8%" align="center" class="text1">生活部</td>
+    <td><span class="text"><a href="#">美图修一修</a></span>--<span class="text1">女朋友的照片，帮忙处理下，好看就行</span></td>
+    <td align="center">一般</td>
+    <td align="center" >暂停</td>
+    <td align="center"><img src="images/主页_08.gif"></td>
+    <td align="center">2016-03-18</td>
+  </tr>
+  <tr>
+    <td align="center"><input type="checkbox" name="checkbox5" id="checkbox5"></td>
+    <td align="center"><a href="#">梁天</a></td>
+    <td width="8%" align="center" class="text1">市场部</td>
+    <td><span class="text"><a href="#">给我一点素材</a></span>--<span class="text1">要做一个招新的工作，找一些好看素材</span></td>
+    <td align="center" class="text2">加急</td>
+    <td align="center" class="text1">未接</td>
+    <td align="center"><img src="images/主页_13.gif"></td>
+    <td align="center">2016-01-24</td>
+  </tr>
+  <tr>
+    <td align="center"><input type="checkbox" name="checkbox6" id="checkbox6"></td>
+    <td align="center"><a href="#">李湘云</a></td>
+    <td width="8%" align="center" class="text1">设计部</td>
+    <td><span class="text"><a href="#">海报制作</a></span>--<span class="text1">五一主题海报一张，突出主题，内容丰富</span></td>
+    <td align="center">一般</td>
+    <td align="center" >放弃</td>
+    <td align="center"><img src="images/主页_10.gif" width="74" height="6"></td>
+    <td align="center">2016-04-28</td>
+  </tr>
+  <tr>
+    <td align="center"><input type="checkbox" name="checkbox7" id="checkbox7"></td>
+    <td align="center"><a href="#">刘思</a></td>
+    <td width="8%" align="center" class="text1">副经理</td>
+    <td><span class="text"><a href="#">店铺装修</a></span>--<span class="text1">天猫食品网站进行装修，要求美观、整齐统一</span></td>
+    <td align="center" class="txet3">紧急</td>
+    <td align="center">完成</td>
+    <td align="center"><img src="images/主页_06.gif"></td>
+    <td align="center">2016-04-03</td>
+  </tr>
+  <tr>
+    <td align="center"><input type="checkbox" name="checkbox8" id="checkbox8"></td>
+    <td align="center"><a href="#">王刚</a></td>
+    <td width="8%" align="center" class="text1">生活部</td>
+    <td><span class="text"><a href="#">美图修一修</a></span>--<span class="text1">女朋友的照片，帮忙处理下，好看就行</span></td>
+    <td align="center">一般</td>
+    <td align="center">完成</td>
+    <td align="center"><img src="images/主页_06.gif"></td>
+    <td align="center">2016-03-18</td>
+  </tr>
+  <tr>
+    <td align="center"><input type="checkbox" name="checkbox9" id="checkbox9"></td>
+    <td align="center"><a href="#">陈世美</a></td>
+    <td width="8%" align="center" class="text1">市场部</td>
+    <td><span class="text"><a href="#">给我一点素材</a></span>--<span class="text1">要做一个招新的工作，找一些好看素材</span></td>
+    <td align="center">一般</td>
+    <td align="center">完成</td>
+    <td align="center"><img src="images/主页_06.gif"></td>
+    <td align="center">2016-01-24</td>
+  </tr>
+</table>
+</div>
+</div>
+    
+    </td>
+
+<td width="270" align="center" valign="top">
+    <div class="kq">
+   <div class="jianju"> <table width="270" cellspacing="0">
+  <tr>
+    <td width="99" height="40" rowspan="2" align="center"><label>
+      <input name="button" type="submit" class="qiandao" id="button" value="签到">
+    </label></td>
+    <td width="118" align="center"><span>打卡时间</span></td>
+    <td width="47" rowspan="2" align="left"><p><a href="#">打卡<br>
+记录</a></p></td>
+  </tr>
+  <tr>
+    <td align="center"><span>07:59:58</span></td>
+  </tr>
+  <tr>
+    <td height="40" rowspan="2" align="center"><h3>
+      <input name="button2" type="submit" class="qiantui" id="button2" value="签退">
+    </h3></td>
+    <td align="center" ><p>当前时间</p></td>
+    <td rowspan="2" align="left"><p><a href="#">考勤<br>
+记录</a></p></td>
+  </tr>
+  <tr>
+    <td align="center"><p>15:32:08</p></td>
+  </tr>
+</table></div>
+<div class="rl"><span class="left"><a href="#"><img src="images/04.png" ></a></span><span class="right"><a href="#"><img src="images/05.png"></a></span>
+  <p>4月考勤</p>
+</div>
+<div class="day">
+<table width="100%" border="0">
+  <tr>
+    <td align="center" ><span class="STYLE7">日</span></td>
+    <td align="center">一</td>
+    <td align="center">二</td>
+    <td align="center">三</td>
+    <td align="center">四</td>
+    <td align="center">五</td>
+    <td align="center"><span class="STYLE7">六</span></td>
+  </tr>
+  <tr>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">1</td>
+    <td align="center"><span class="STYLE7">2</span></td>
+  </tr>
+  <tr>
+    <td align="center"><span class="STYLE7">3</span></td>
+    <td align="center">4</td>
+    <td align="center" class="r2"><p class="STYLE5">5</p>      </td>
+    <td align="center">6</td>
+    <td align="center">7</td>
+    <td align="center">8</td>
+    <td align="center"><span class="STYLE7">9</span></td>
+  </tr>
+  <tr>
+    <td align="center"><span class="STYLE7">10</span></td>
+    <td align="center">11</td>
+    <td align="center">12</td>
+    <td align="center" class="STYLE4">13</td>
+    <td align="center">14</td>
+    <td align="center">15</td>
+    <td align="center"><span class="STYLE7">16</span></td>
+  </tr>
+  <tr>
+    <td align="center"><span class="STYLE7">17</span></td>
+    <td align="center">18</td>
+    <td align="center">19</td>
+    <td align="center">20</td>
+    <td align="center">21</td>
+    <td align="center">22</td>
+    <td align="center"><span class="STYLE7">23</span></td>
+  </tr>
+  <tr>
+    <td align="center"><span class="STYLE7">24</span></td>
+    <td align="center">25</td>
+    <td align="center">26</td>
+    <td align="center">27</td>
+    <td align="center">28</td>
+    <td align="center">29</td>
+    <td align="center"><span class="STYLE7">30</span></td>
+  </tr>
+</table>
+<div class="clorering">
+  <table width="270" cellspacing="0">
+    <tr>
+      <td width="52" align="center"><img src="images/06.png" width="13" height="13"><span>请假</span></td>
+      <td width="52" align="center"><img src="images/07.png" width="13" height="13">迟到</td>
+      <td width="52" align="center"><img src="images/08.png" width="13" height="13">出差</td>
+      <td width="52" align="center"><img src="images/09.png" width="13" height="13">早退</td>
+      <td align="center"><img src="images/10.png" width="13" height="13"> 旷工</td>
+      </tr>
+  </table>
+</div>
+</div>
+
+    </div>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" valign="top"><div class="title">
+        <h3>我的邮件</h3><p><a href="#">更多</a></p>
+    </div>
+    <div class="tasklist"><table width="100%"cellspacing="0">
+  <tr>
+    <td width="4%" align="center"><label>
+      <input type="checkbox" name="checkbox" id="checkbox">
+    </label></td>
+    <td width="4%" align="center"><img src="images/01.png" width="20" height="14"></td>
+    <td width="8%" align="center">发件人</td>
+    <td width="58%">邮件主题</td>
+    <td width="8%" align="center">大小</td>
+    <td width="8%" align="center">标记</td>
+    <td width="10%" align="center">时间</td>
+  </tr>
+  <tr>
+    <td align="center"><input type="checkbox" name="checkbox2" id="checkbox2"></td>
+    <td align="center"><img src="images/01.png" width="20" height="14"></td>
+    <td width="8%" align="center" ><a href="#">万敬明</a></td>
+    <td><span class="text"><a href="#">宣传海报制作</a></span>-<span class="text1">-五一主题海报一张，突出主题，内容丰富</span></td>
+    <td align="center">3M</td>
+    <td align="center"><img src="images/03.png" width="12" height="12"></td>
+    <td align="center">2016-04-28</td>
+  </tr>
+  <tr>
+    <td align="center"><input type="checkbox" name="checkbox3" id="checkbox3"></td>
+    <td align="center"><img src="images/01.png" width="20" height="14"></td>
+    <td width="8%" align="center" ><a href="#">张帅帅</a></td>
+    <td><span class="text"><a href="#">店铺装修</a></span>--<span class="text1">天猫食品网站进行装修，要求美观</span></td>
+    <td align="center">2.1M</td>
+    <td align="center"><img src="images/03.png" width="12" height="12"></td>
+    <td align="center">2016-04-03</td>
+  </tr>
+  <tr>
+    <td align="center"><input type="checkbox" name="checkbox4" id="checkbox4"></td>
+    <td align="center"><img src="images/01.png" width="20" height="14"></td>
+    <td width="8%" align="center" ><a href="#">杜少康</a></td>
+    <td><span class="text"><a href="#">美图修一修</a></span>--<span class="text1">女朋友的照片，帮忙处理下，好看就行</span></td>
+    <td align="center" >3M</td>
+    <td align="center" ><img src="images/02.png" width="12" height="12"></td>
+    <td align="center">2016-03-18</td>
+  </tr>
+  <tr>
+    <td align="center"><input type="checkbox" name="checkbox5" id="checkbox5"></td>
+    <td align="center"><img src="images/01.png" width="20" height="14"></td>
+    <td width="8%" align="center"><a href="#">梁天</a></td>
+    <td><span class="text"><a href="#">给我一点素材</a></span>--<span class="text1">要做一个招新的工作，找一些好看素材</span></td>
+    <td align="center">20M</td>
+    <td align="center"><img src="images/02.png" width="12" height="12"></td>
+    <td align="center">2016-01-24</td>
+  </tr>
+  <tr>
+    <td align="center"><input type="checkbox" name="checkbox6" id="checkbox6"></td>
+    <td align="center"><img src="images/01.png" width="20" height="14"></td>
+    <td width="8%" align="center" ><a href="#">李湘云</a></td>
+    <td><span class="text"><a href="#">海报制作</a></span>--<span class="text1">五一主题海报一张，突出主题，内容丰富</span></td>
+    <td align="center" >10M</td>
+    <td align="center" ><img src="images/02.png" width="12" height="12"></td>
+    <td align="center">2016-04-28</td>
+  </tr>
+  <tr>
+    <td align="center"><input type="checkbox" name="checkbox7" id="checkbox7"></td>
+    <td align="center"><img src="images/01.png" width="20" height="14"></td>
+    <td width="8%" align="center"><a href="#">刘思</a></td>
+    <td><span class="text"><a href="#">店铺装修</a></span>--<span class="text1">天猫食品网站进行装修，要求美观、整齐统一</span></td>
+    <td align="center">20M</td>
+    <td align="center"><img src="images/02.png" width="12" height="12"></td>
+    <td align="center">2016-04-03</td>
+  </tr>
+</table></td>
+    <td valign="top"><div class="title">
+        <h3>通知公告</h3><p><a href="#">更多</a></p>
+    </div>
+        <div class="talk">
+        <ul>
+          <li><a href="#">各部门请下周三召开全体会议，请部门间转告</a></li>
+        </ul> <ul>
+          <li><a href="#">各部门请下周三召开全体会议，请部门间转告</a></li>
+         </ul >
+        <ul>
+          <li><a href="#">各部门请下周三召开全体会议，请部门间转告</a></li>
+         </ul >
+        <ul>
+          <li><a href="#">各部门请下周三召开全体会议，请部门间转告</a></li>
+         </ul >
+        <ul>
+          <li><a href="#">各部门请下周三召开全体会议，请部门间转告</a></li> 
+        </ul>
+         <ul>
+           <li><a href="#">各部门请下周三召开全体会议，请部门间转告</a></li> 
+         </ul>
+         <ul>
+           <li><a href="#">各部门请下周三召开全体会议，请部门间转告</a></li>
+         </ul >
+         <ul>
+           <li><a href="#">各部门请下周三召开全体会议，请部门间转告</a></li>
+         </ul
+         >
+         </ul
+         ></ul
+        ></div>
+        </td>
+  </tr>
+</table>
+
+    
+    </td>
+  </tr>
+</table>
+</body>
+</html>
