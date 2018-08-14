@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>卓途教育在线考试平台</title>
+		<link rel="stylesheet" type="text/css" href="css/zt.css"/>
+		<link rel="stylesheet" type="text/css" href="css/main.css"/>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript" src="js/lrtk.js"></script>
+	</head>
+	<body>
+		
+		<div class="wrap">
+			<nav class="nav">
+				<div class="main">
+					<div class="logo"><a href="#"><img src="img/logohei.png"/></a></div>
+					<div class="sliderdown">
+						<form>
+							<select class="classify">
+							<option value="yijian">一级建造师·题库</option>
+							<option value="erjian">二级建造师·题库</option>
+							<option value="xiaofang">消防工程师·题库</option>
+							<option value="jianli">监理工程师·题库</option>
+							<option value="zhicheng">中级职称·题库</option>
+							<option value="xueli">学历·题库</option>
+							</select>
+						</form>
+					</div>
+					<div class="navtxt">
+						<ul>
+							<li id="act"><a href="#">首页</a></li>
+							<li><a href="#">模拟考场</a></li>
+							<li><a href="#">历年真题</a></li>
+							<li><a href="#">资料下载</a></li>
+							<li><a href="#">每日一练</a></li>
+							<li><a href="#">学习记录</a></li>
+						</ul>
+						<script type="text/javascript">
+							$(".navtxt ul li").click(function(){
+								$(this).attr("id","act");
+								$(this).siblings().removeAttr("id","act");
+							});
+						</script>
+					</div>
+					<div class="timebox">
+						距<span class="">一级建造师</span><br />考试还有&nbsp&nbsp<span class="day">52</span>&nbsp&nbsp天
+					</div>
+				</div>
+			</nav>
+			<section class="contain">
+				<div class="main">
+					<div class="firstbox">
+						<div class="banner">
+							<div id="playBox">
+								<div class="pre"></div>
+								<div class="next"></div>
+								<div class="smalltitle">
+									<ul>
+										<li class="thistitle"></li>
+										<li></li>
+										<li></li>
+									</ul>
+								</div>
+								<ul class="oUlplay">
+									<li>
+										<a href="#" target="_blank"><img src="img/banner1.png" </a></li>
+									<li>
+										<a href="#" target="_blank"><img src="img/banner1.png" </a></li>
+									<li>
+										<a href="#" target="_blank"><img src="img/banner1.png" </a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="login">
+							<div class="header"><a href="member.html"><img src="img/tx.png" /></a></div><!--登录状态此处为账号头像,登录成功点击跳转到会员中心-->
+							<p><a href="login.html">登录</a>/<a href="regist.html">注册</a></p><!--登录状态此处为账号名字-->
+							<p>成为会员学习更嗨皮！</p>
+						</div>
+						<div class="testbox">
+							<ul>
+								<li>
+										<a href="#">
+											<img src="img/iconlx.png" />
+											<h3>每日练习</h3>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<img src="img/iconmn.png" />
+											<h3>真题模拟</h3>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<img src="img/iconfx.png" />
+											<h3>专题复习</h3>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<img src="img/iconls.png" />
+											<h3>我的记录</h3>
+										</a>
+									</li>
+							</ul>
+						</div>
+					</div>
+					<div class="secondbox">
+						<div class="title1">
+							<h3>专题训练</h3>
+							<p><a href="#">更多</a></p>
+						</div>
+						<div class="cton">
+							<ul>
+								<li>
+									<div class="ttbox"><img src="img/zttt1.png"/></div>
+									<h3>建设工程项目管理</h3>
+									<p>2015年全国一级建造师模拟题</p>
+									<br /><br />
+									<p><span class="number">431</span>人在学</p><br />
+									<p><a href="#">开始练习</a></p>
+									
+								</li>
+								<li>
+									<div class="ttbox"><img src="img/zttt2.png"/></div>
+									<h3>建设工程项目管理</h3>
+									<p>2015年全国一级建造师模拟题</p>
+									<br /><br />
+									<p><span class="number">431</span>人在学</p><br />
+									<p><a href="#">开始练习</a></p>
+									
+								</li>
+								<li>
+									<div class="ttbox"><img src="img/zttt3.png"/></div>
+									<h3>建设工程项目管理</h3>
+									<p>2015年全国一级建造师模拟题</p>
+									<br /><br />
+									<p><span class="number">431</span>人在学</p><br />
+								
+									<p><a href="#">开始练习</a></p>
+									
+								</li>
+								<li>
+									<div class="ttbox"><img src="img/zttt4.png"/></div>
+									<h3>建设工程项目管理</h3>
+									<p>2015年全国一级建造师模拟题</p>
+									<br /><br />
+									<p><span class="number">431</span>人在学</p><br />
+									<p><a href="#">开始练习</a></p>
+									
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="thirdbox">
+						<div class="title1">
+							<h3>资料下载</h3>
+							<p><a href="#">更多</a></p>
+						</div>
+						<div class="cton">
+							<ul>
+									<li>
+									<div class="ttbox"><img src="img/zlxz1.png"/></div>
+									<h3>建设工程项目管理</h3>
+									<p>2015年全国一级建造师模拟题</p>
+									<br /><br />
+									<p><span class="number">431</span>次下载</p><br />
+									<p><a href="#">一键下载</a></p>
+									
+								</li>
+								<li>
+									<div class="ttbox"><img src="img/zlxz2.png"/></div>
+									<h3>建设工程项目管理</h3>
+									<p>2015年全国一级建造师模拟题</p>
+									<br /><br />
+									<p><span class="number">431</span>次下载</p><br />
+									<p><a href="#">一键下载</a></p>
+									
+								</li>
+								<li>
+									<div class="ttbox"><img src="img/zlxz3.png"/></div>
+									<h3>建设工程项目管理</h3>
+									<p>2015年全国一级建造师模拟题</p>
+									<br /><br />
+									<p><span class="number">431</span>次下载</p><br />
+									<p><a href="#">一键下载</a></p>
+									
+								</li>
+								<li>
+									<div class="ttbox"><img src="img/zlxz4.png"/></div>
+									<h3>建设工程项目管理</h3>
+									<p>2015年全国一级建造师模拟题</p>
+									<br /><br />
+									<p><span class="number">431</span>次下载</p><br />
+									<p><a href="#">一键下载</a></p>
+									
+								</li>
+							</ul>
+						</div>
+					</div>
+				
+				    <div class="fourthbox">
+				    	<div class="title1">
+							<h3>试卷排行</h3>
+							<p><a href="#">更多</a></p>
+						</div>
+						<div class="cton">
+							<div class="leftimg"><img src="img/sjph.png"/></div>
+							<div class="rightxt">
+								<ul>
+									<li><a href="#">1、2013年一级建造师《法规及相关知识》模拟试题一</a></li>
+									<li><a href="#">2、2013年一级建造师《法规及相关知识》模拟试题一</a></li>
+									<li><a href="#">3、2013年一级建造师《法规及相关知识》模拟试题一</a></li>
+									<li><a href="#">4、2013年一级建造师《法规及相关知识》模拟试题一</a></li>
+									<li><a href="#">5、2013年一级建造师《法规及相关知识》模拟试题一</a></li>
+									<li><a href="#">6、2013年一级建造师《法规及相关知识》模拟试题一</a></li>
+									<li><a href="#">7、2013年一级建造师《法规及相关知识》模拟试题一</a></li>
+									
+								</ul>
+							</div>
+						</div>
+				    </div>
+				</div>
+			</section>
+			<footer class="footer text-agin">
+				<div class="main">
+					<p><a href="#">关于我们</a>  ┊   <a href="#">付款方式</a>   ┊   <a href="#">合作推广</a>   ┊   <a href="#">合作伙伴</a>   ┊   <a href="#">联系我们</a>   ┊   <a href="#">教师合作</a>   ┊   <a href="#">网站地图</a>   ┊   <a href="#">网站声明</a>   ┊   <a href="#">友情链接</a>   ┊   <a href="#">帮助中心</a></p>
+				    <p>办公地址： 郑州市紫荆山路人民路交叉处紫荆山商务1108</p>
+				</div>
+				<div class="copy">2010-2017 <a href="http://www.zhuotujiaoyu.com">郑州卓途教育</a>, All Rights Reserved. | <a href="http://www.beian.gov.cn/portal/index?token=">豫ICP备16034464号-2</a> | 客服热线：0371-60918733 | 招商加盟热线：0371-60918733</div>
+			</footer>
+		</div>
+	</body>
+</html>
+

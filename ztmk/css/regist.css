@@ -1,0 +1,31 @@
+body{height: 100%;width: 100%;position: fixed;top: 0px;left: 0px ;right: 0px;bottom: 0px;background: url(../img/wcbg.jpg) no-repeat;background-size: 100%;}
+			.registbox{width: 770px;height: 435px;background: rgba(255,255,255,0.75);margin: 0 auto;padding: 15px;}
+			.title{width: 100%;border-bottom: 1px solid #cecbcf;height: 45px;}
+			.title h3{font:20px/35px "微软雅黑";float: left;color: #ff0432;}.title span{font: 14px/35px "微软雅黑";color: #666;float: right;}
+			.regist{width: 100%;text-align: center;}
+			.registb{width: 730px;margin: 0 auto;}
+			.registb tr{height: 50px;padding-top: 10px;width: 100%;}
+			.registb tr td:nth-of-type(1){font:16px "微软雅黑";text-align: left;}
+			.registb tr td:nth-of-type(3){font:12px "微软雅黑";text-align: left;color: #666;}
+			.submit{width: 216px;height: 42px;cursor: pointer;border: none;background: #FF0432;font:20px "微软雅黑";color: #fff;cursor: pointer;border-radius: 50px;}
+			.submit:hover{background: #000000;}
+			.texts{width: 150px;height: 36px;border: none;border-radius:30px;background: #fff;padding: 0 50px;font: 14px "微软雅黑";}
+			.textsj{width: 120px;height: 36px;border: none;border-radius:30px;background: #fff;}
+			.textsj:first-child{width: 80px;padding: 0 20px;font: 14px "微软雅黑";color: #333;}
+			.textsj:last-child{margin-left: 10px;background: #000000;font: 12px "微软雅黑";color: #fff;cursor: pointer;}
+			.textsj:last-child:hover{background: #333;}
+			em{color: red;}
+			.protoco{width: 100%;height: 30px;padding-top: 15px;}.protoco span{margin-left: 10px;margin-top: -2px;}
+			.nav{width: 100%;height: 70px;padding-top: 30px;}
+			.logo{float: left;}
+			.login{float: right;width:150px;padding-top: 15px;color: #eee;} 
+			.login span a{font: 14px/2 "微软雅黑";color: #fff;}
+			.login span a:hover{color: #c9151e;text-decoration: underline;}
+			.conten{width: 100%;padding-top: 180px;position: relative;}
+			.foot{position: absolute;bottom: 15px;width: 1000px;}
+			.foot span{font: 12px "微软雅黑";color: #000;}
+			@media (max-width: 1440px) {
+		    .conten{padding-top: 30px;}
+		    .main{width: 900px;}
+		    .foot{position: absolute;bottom: 0px;width: 900px;}
+            }

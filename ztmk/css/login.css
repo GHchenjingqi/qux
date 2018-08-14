@@ -1,0 +1,31 @@
+body{height: 100%;width: 100%;position: fixed;top: 0px;left: 0px ;right: 0px;bottom: 0px;background: url(../img/wcbg.jpg) no-repeat;background-size: 100%;}
+			.loginbox{width: 350px;height:100%;background: rgba(255,255,255,0.75);float: right;padding: 15px;}
+			.loging{width: 100%;height: 405px;background: #fff;overflow: hidden;}
+			.lgtb{width: 100%;margin: 0px;padding: 0px;}
+			.lgtb tr{width: 100%;height: 80px;margin: 0px;padding: 0px;float: left;}
+			.lgtb tr td{border: none;width: 100%;height: 80px;border: none;}
+			.lgtb tr td:nth-of-type(1){height: 90px;}
+			.lgtb tr:nth-of-type(4){height: 70px;}
+			.lgtb tr td img{width: 100%;height: 100%;}
+			.lgtb tr td label{float: left;}
+			.forget{margin-left: 190px;font: 12px "微软雅黑";color: #333;margin-right: 10px;cursor: pointer;}.forget:hover{text-decoration: underline;}
+			.a11{margin-left: 10px;font: 12px "微软雅黑";color: #333;}
+			.a11 input{margin-right: 5px;float: left;margin-left: 10px;}.a11 span{float: left;margin-top: -2px;}
+			.name{width: 272px;border-radius: 50px;height: 52px;border: 1px solid #999;margin-left:8px;margin-top: 30px;background: url(../img/zh.jpg) no-repeat;padding-left: 60px;background-position: 10px 10px;}
+			.password{width: 272px;border-radius: 50px;height: 52px;border: 1px solid #999;margin-left:8px;margin-top: 20px;background: url(../img/mm.jpg) no-repeat;padding-left: 60px;background-position: 10px 10px;}
+			.btn{width: 160px;height: 44px;border: none;background: #ff0432;font: 20px "微软雅黑";color: #fff;border-radius: 50px;margin-left: 10px;cursor: pointer;margin-top: -40px;}
+			.btn:hover{background: #000000;}
+			.btn:last-child{background: #000000;}.btn:last-child:hover{background: #ff0432;}
+			.nav{width: 100%;height: 70px;padding-top: 30px;}
+			.logo{float: left;}
+			.login{float: right;width:150px;padding-top: 15px;color: #eee;} 
+			.login span a{font: 14px/2 "微软雅黑";color: #fff;}
+			.login span a:hover{color: #c9151e;text-decoration: underline;}
+			.conten{width: 100%;padding-top: 180px;position: relative;}
+			.foot{position: absolute;bottom: 15px;width: 1000px;}
+			.foot span{font: 12px "微软雅黑";color: #000;}
+		     @media (max-width: 1440px) {
+		    .conten{padding-top: 30px;}
+		    .main{width: 900px;}
+		    .foot{position: absolute;bottom: 0px;width: 900px;}
+            }
