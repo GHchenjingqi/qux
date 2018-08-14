@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>凯宾，家的感觉！</title>
+		<link rel="stylesheet" type="text/css" href="css/gb.css"/> <!--全局通用css-->
+	    <link rel="stylesheet" type="text/css" href="css/style1.css" /><!--bg图片css-->
+	    <link rel="stylesheet" type="text/css" href="css/jd.css"/>
+	    <script type="text/javascript" src="js/modernizr.custom.86080.js"></script>	<!--bannerjs-->
+	    <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script><!--全局js-->
+	</head>
+	<style type="text/css">
+	@font-face {font-family: "s3";src: url("font/dq.otf");}
+	    body{width:1280px;height:720px;overflow:hidden;background: #000;}
+	    a:focus { outline:none;}  
+	    .bg{width: 1280px;height: 720px;position: fixed;overflow: hidden;top:0px;left: 0px;z-index: 05;}
+	    .hbg{width: 1280px;height: 720px;background:rgba(0,0,0,0.4);position: fixed;overflow: hidden;top:0px;left: 0px;z-index: 55;}
+	    .cton{width: 828px;height: 450px;background: url(img/tf.png);position: absolute;top:160px;z-index: 5555;left: 227px;}
+	    .tit h3{font-size: 38px;font-family: "s3";color: #FFF;text-align: center;line-height: 100px;}
+	    .xuzhi{width: 88%;padding: 80px 35px;}
+	    .xuzhi span{font-size: 26px;font-family: "s3";color: #FFF;}
+	    .ok{position: absolute;top:355px;left: 2px;z-index: 9999;}
+	    .back{position: absolute;top:355px;right: 2px;z-index: 9999;}
+	    .tihuan{text-align: center;}
+	    .gif{position: absolute;top:170px;left: 400px;z-index: 9999;}
+	</style>
+	<body>
+		<audio src="mp3/1.mp3" loop="loop" autoplay></audio><!--背景音乐-->
+		<!--浮动背景-->
+		<div class="bg">
+			<ul class="cb-slideshow">
+            <li><span>Image 01</span></li>
+            <li><span>Image 02</span></li>
+            <li><span>Image 03</span></li>
+            <li><span>Image 04</span></li>
+            <li><span>Image 05</span></li>
+            <li><span>Image 06</span></li>
+        </ul>
+		</div>
+		<div class="hbg"></div>
+		<div class="ttbox"><!--标题及时间-->
+				<div class="minwidth left">
+				<div class="title"><h1><span>在线</span>退房</h1></div></div>
+				<div class="rightbox">
+					<span id="shijian">11:31</span>
+					<p id="nian">2017年2月18日</p>
+					<h3 class="tianqi">晴转多云　12℃-22℃</h3>
+				</div>
+			</div>
+		<div class="cton">
+			<div class="tit"><h3>是否需要立即退房？</h3></div>
+			<div class="xuzhi"><span class="tihuan">使用本功能，您可以方便快捷地通知前台退房。请选择确认退房后，服务员将于5分钟内上门为您清点物品，并协助您完成全部退房手续！</span></div>
+		    <div class="ok"><img src="img/ok.png"/></div>
+		    <div class="back yc"><img src="img/back.png"/></div>
+		    <div class="gif yc"><img src="img/default.gif"/></div>
+		</div>	
+		<script type="text/javascript">
+		 if(typeof(VCOM_extra) == 'function'){
+            window.onkeypress = kc;	
+            }else{
+	                window.addEventListener('keydown', kc, false);
+            }
+             /*键控*/
+           function kc(){
+	        switch(event.keyCode){
+			case 38://上
+			
+				break;
+			case 40://下
+			
+			       break;
+			case 37://左
+			   $(".ok").show();
+			   $(".back").hide();
+			   break;
+			case 39://右
+			   $(".ok").hide();
+			   $(".back").show();
+				break;
+			case 13://进入
+			    if($(".ok").is(":visible")){
+			    	 $(".tihuan").html("正在提交您的信息，请稍后...");
+			    	 $(".gif").show();
+			    	 setTimeout(dd,3000);
+			    }
+			    if($(".back").is(":visible")){
+			    	alert("456");
+			    }
+			    break;
+			case 27:
+			    
+			    break;
+		    }
+	        } 
+	        function dd(){
+	        	 $(".gif").hide();
+	        	 $(".tihuan").html("恭喜您，退房成功！！！");
+	        }
+		</script>
+		<script type="text/javascript">
+        /*年月日开始*/
+           var nowDate = new Date();
+           var year = nowDate.getFullYear();
+           var month = nowDate.getMonth() + 1 < 10 ? "0" + (nowDate.getMonth() + 1): nowDate.getMonth() + 1;
+           var day = nowDate.getDate() < 10 ? "0" + nowDate.getDate() : nowDate.getDate();
+           var dateStr = year + "-" + month + "-" + day;
+           document.getElementById("nian").innerHTML = dateStr;
+    
+	
+        /*时间开始*/
+       var ns4up1 = (document.layers) ? 1 : 0;  // browser sniffer
+       var ie4up1 = (document.all&&(navigator.appVersion.indexOf("MSIE 4") == -1)) ? 1 : 0;
+       var ns6up1 = (document.getElementById&&!document.all) ? 1 : 0;
+       function nowclock() {
+       if (!ns4up1 && !ie4up1 && !ns6up1) return false;
+          var digital = new Date();
+          var hours = digital.getHours();
+          var minutes = digital.getMinutes();
+          var seconds = digital.getSeconds();
+          var day = digital.getDate();
+          var month = digital.getMonth() + 1;
+          var year = digital.getYear();
+          if (hours > 11) amOrPm = "PM";
+          if (hours > 12) hours = hours - 12;
+          if (hours == 0) hours = 12;
+          if (minutes < 10) minutes = "0" + minutes;
+          if (seconds < 10) seconds = "0" + seconds;
+          if (day < 10) day = "0" + day;
+          if (month < 10) month = "0" + month;
+          dispTime = hours + ":" + minutes;
+          if (ns4up1) {
+             document.layers.nowTime.document.write(dispTime);
+             document.layers.nowTime.document.close();
+             document.layers.nowDate.document.write(dispDate);
+             document.layers.nowDate.document.close();
+          } else if (ns6up1){
+             document.getElementById("shijian").innerHTML = dispTime;
+          } else if (ie4up1){
+          nowTime.innerHTML = dispTime;
+          } setTimeout("nowclock()", 1000);
+          } nowclock();
+
+        
+        	          /*天气开始*/
+             var cityUrl = 'http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js';
+             $.getScript(cityUrl, function(script, textStatus, jqXHR) {
+             var citytq = remote_ip_info.city ;// 获取城市
+             var url = "http://php.weather.sina.com.cn/iframe/index/w_cl.php?code=js&city=" + citytq + "&day=0&dfc=3";
+             $.ajax({
+            url : url,
+            dataType : "script",
+            scriptCharset : "gbk",
+            success : function(data) {
+                var _w = window.SWther.w[citytq][0];
+                var _f= _w.f1+"_0.png";
+                if(new Date().getHours() > 17){
+                     _f= _w.f2+"_1.png";                
+                }
+                var img = "<img width='30px' height='30px' src='http://i2.sinaimg.cn/dy/main/weather/weatherplugin/wthIco/20_20/" +_f
+                + "' />";
+                var tq ="&nbsp"+ img +"&nbsp&nbsp&nbsp"+ " " + _w.s1 + " " ;
+                var wd = _w.t1 + "℃～" + _w.t2 + "℃  " ;
+                var fl = _w.d1 + _w.p1 + "级";
+                var tianqi = _w.s1 + " "+_w.t1 + "℃～" + _w.t2 + "℃  "
+                //#weather自己修改,天气样式自己打断点调试
+                  $('.tianqi').html(tianqi);
+            }
+        });
+       });
+		</script>
+	</body>
+</html>

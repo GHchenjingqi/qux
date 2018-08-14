@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>凯宾，家的感觉！</title>
+		<link rel="stylesheet" type="text/css" href="css/gb.css"/> <!--全局通用css-->
+		<link rel="stylesheet" type="text/css" href="css/jd.css"/><!--标题css-->
+	    <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script><!--全局js-->  
+	    <script src="js/gdlb.js"></script>
+	    <style type="text/css">  
+	    @font-face {font-family: "s3";src: url("font/dq.otf");}
+	    a:focus { outline:none;}  
+        body{width:1280px;height:720px;overflow:hidden;background:#000;position:relative}
+        .content{width:1280px;height:720px;background:linear-gradient(#007bd1,#38adff)}
+        .lunbo{width:780px;height:500px;position:absolute;top:150px;left:50px}
+        .banner{width:550px;height:300px;overflow:hidden;position:relative;margin-left:auto;margin-right:auto}
+        .banner .img{width:99999px;position:absolute;left:0;top:0}
+        .banner .img li{float:left}
+        .banner .img img{width:550px}
+        .banner .num{position:absolute;width:100%;bottom:10px;left:0;text-align:center;font-size:0}
+        .banner .num li{width:10px;height:10px;background:rgba(0,0,0,.5);border-radius:50%;display:inline-block;margin:0 3px;cursor:pointer}
+        .banner .num li.on{background:#fff}
+        .banner .btn{width:30px;height:50px;background:rgba(0,0,0,.5);position:absolute;top:50%;margin-top:-25px;cursor:pointer;text-align:center;line-height:50px;color:#fff;font-size:40px;font-family:"宋体";display:none}
+        .banner:hover .btn{display:block}
+        .banner .btn_l{left:0}
+        .banner .btn_r{right:0}
+         #ban1 .banner{width:758px;height:482px;margin:0 auto;box-shadow:-1px 8px 15px #0d4e88}
+         #ban1 .banner .img img{width:758px;height:482px}
+          .biaoqian{position:absolute;top:25px;right:25px;z-index:555}
+          .biaoqian1{position:absolute;top:25px;right:25px;z-index:555}
+          .biaoqian2{position:absolute;top:25px;right:25px;z-index:555}
+          .tjbox{width:380px;height:230px;background:#00B4FF;position:absolute;top:150px;right:60px;box-shadow:-1px 8px 15px #105b99}
+          .rbbox{width:380px;height:230px;background:#00B4FF;position:absolute;top:402px;right:60px;box-shadow:-1px 8px 15px #105b99}
+          .down{position:absolute;bottom:20px;left:552px}
+	    </style>
+	</head>
+	<body>
+		<audio src="mp3/0.mp3" loop="loop" autoplay></audio><!--背景音乐-->
+		<section class="content">
+			<div class="ttbox"><!--标题及时间-->
+				<div class="minwidth left">
+				<div class="title"><h1><span>高清</span>点播</h1></div></div>
+				<div class="rightbox">
+					<span id="shijian">11:31</span>
+					<p id="nian">2017年2月18日</p>
+					<h3 class="tianqi">晴转多云　12℃-22℃</h3>
+				</div>
+			</div>
+			<div class="lunbo">
+			   <div id="ban1">
+               <div class="banner">
+	           <ul class="img">
+    	           <li><a href="#"><img src="images/db01.jpg"></a></li>
+                   <li><a href="#"><img src="images/db02.jpg"></a></li>
+                   <li><a href="#"><img src="images/db03.jpg"></a></li>     
+               </ul>
+               <ul class="num">    	
+               </ul>
+               <div class="btn btn_l">&lt;</div>
+               <div class="btn btn_r">&gt;</div>
+            </div></div>
+            <div class="biaoqian"><img src="img/db3.png"/></div>
+			</div>
+		    <div class="tjbox"><img src="images/dbtj.jpg"/><img class="biaoqian1" src="img/db2.png"/></div>
+		    <div class="rbbox"><img src="images/dbrb.jpg"/><img class="biaoqian2" src="img/db1.png"/></div>
+		    <div class="down"><img src="img/down.png"/></div>
+		</section>
+		<script type="text/javascript">
+        /*年月日开始*/
+           var nowDate = new Date();
+           var year = nowDate.getFullYear();
+           var month = nowDate.getMonth() + 1 < 10 ? "0" + (nowDate.getMonth() + 1): nowDate.getMonth() + 1;
+           var day = nowDate.getDate() < 10 ? "0" + nowDate.getDate() : nowDate.getDate();
+           var dateStr = year + "-" + month + "-" + day;
+           document.getElementById("nian").innerHTML = dateStr;
+        </script>
+        <script type="text/javascript">		
+        /*时间开始*/
+       var ns4up1 = (document.layers) ? 1 : 0;  // browser sniffer
+       var ie4up1 = (document.all&&(navigator.appVersion.indexOf("MSIE 4") == -1)) ? 1 : 0;
+       var ns6up1 = (document.getElementById&&!document.all) ? 1 : 0;
+       function nowclock() {
+       if (!ns4up1 && !ie4up1 && !ns6up1) return false;
+          var digital = new Date();
+          var hours = digital.getHours();
+          var minutes = digital.getMinutes();
+          var seconds = digital.getSeconds();
+          var day = digital.getDate();
+          var month = digital.getMonth() + 1;
+          var year = digital.getYear();
+          if (hours > 11) amOrPm = "PM";
+          if (hours > 12) hours = hours - 12;
+          if (hours == 0) hours = 12;
+          if (minutes < 10) minutes = "0" + minutes;
+          if (seconds < 10) seconds = "0" + seconds;
+          if (day < 10) day = "0" + day;
+          if (month < 10) month = "0" + month;
+          dispTime = hours + ":" + minutes;
+          if (ns4up1) {
+             document.layers.nowTime.document.write(dispTime);
+             document.layers.nowTime.document.close();
+             document.layers.nowDate.document.write(dispDate);
+             document.layers.nowDate.document.close();
+          } else if (ns6up1){
+             document.getElementById("shijian").innerHTML = dispTime;
+          } else if (ie4up1){
+          nowTime.innerHTML = dispTime;
+          } setTimeout("nowclock()", 1000);
+          } nowclock();
+</script>
+        <script type="text/javascript">
+        	          /*天气开始*/
+             var cityUrl = 'http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js';
+             $.getScript(cityUrl, function(script, textStatus, jqXHR) {
+             var citytq = remote_ip_info.city ;// 获取城市
+             var url = "http://php.weather.sina.com.cn/iframe/index/w_cl.php?code=js&city=" + citytq + "&day=0&dfc=3";
+             $.ajax({
+            url : url,
+            dataType : "script",
+            scriptCharset : "gbk",
+            success : function(data) {
+                var _w = window.SWther.w[citytq][0];
+                var _f= _w.f1+"_0.png";
+                if(new Date().getHours() > 17){
+                     _f= _w.f2+"_1.png";                
+                }
+                var img = "<img width='30px' height='30px' src='http://i2.sinaimg.cn/dy/main/weather/weatherplugin/wthIco/20_20/" +_f
+                + "' />";
+                var tq ="&nbsp"+ img +"&nbsp&nbsp&nbsp"+ " " + _w.s1 + " " ;
+                var wd = _w.t1 + "℃～" + _w.t2 + "℃  " ;
+                var fl = _w.d1 + _w.p1 + "级";
+                var tianqi = _w.s1 + " "+_w.t1 + "℃～" + _w.t2 + "℃  "
+                //#weather自己修改,天气样式自己打断点调试
+                  $('.tianqi').html(tianqi);
+            }
+        });
+       });
+       if(typeof(VCOM_extra) == 'function'){
+	                window.onkeypress = kc;	
+             }else{
+	                window.addEventListener('keydown', kc, false);
+             }
+             /*键控*/
+           function kc(){
+	        switch(event.keyCode){
+			case 38://上
+			       break;
+			case 37://左
+			
+				break;
+			case 40://下
+			      alert("123");//调用APK
+			       break;
+			case 39://右
+			
+				break;
+			case 13://进入
+                window.location.href = "#";//直接调用APK
+			    break;
+			case 8://backspace
+			
+			    break;
+			case 27://esc
+			
+	          break;
+	        }} //键控结束
+        </script>	
+        
+	</body>
+</html>

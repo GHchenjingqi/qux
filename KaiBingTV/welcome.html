@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>凯宾，感谢您的享用</title>
+		<link rel="stylesheet" type="text/css" href="css/gb.css"/> <!--全局通用css-->
+		<link rel="stylesheet" type="text/css" href="css/style1.css" /><!--bg图片css-->
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script><!--全局js-->
+	    <script type="text/javascript" src="js/modernizr.custom.86080.js"></script>	<!--bannerjs-->
+	</head>
+	<style type="text/css">
+		@font-face {font-family: "s3";src: url("font/dq.otf");}
+	    body{width:1280px;height:720px;overflow:hidden;background: #000;}
+	    a:focus { outline:none;}  
+	    .welcome{}
+		.bg{width: 1280px;height: 720px;position: fixed;overflow: hidden;top:0px;left: 0px;z-index: 05;}
+		.content{width: 680px;height:400px;padding:50px 50px;background: url(img/ctbg.png) no-repeat;position: fixed;top:130px;left:260px;z-index: 555;}
+	    .content h1{font-size: 50px;color: #FFFFFF;font-weight: 400; font-family: "s3";}
+	    .content h3{font-size: 24px;color: #FFFFFF;font-weight: 400; font-family: "s3";padding-bottom: 15px;}
+	    .box{height:10px;width:100px;border-bottom: 1px solid #FFFFFF;margin-bottom: 35px;}
+	    .right{width: 180px;height: 80px;position: absolute;top: 62px;right: 50px;color: #FFFFFF;font-weight: 400; font-family: "s3";}
+	    .right h2{font-size: 25px;float: right;}
+	    .right h4{font-size: 16px;float: right;} 
+	</style>
+	<body>
+		<audio src="mp3/0.mp3" loop="loop" autoplay></audio><!--背景音乐-->
+		<div class="bg">
+			<ul class="cb-slideshow">
+            <li><span>Image 01</span></li>
+            <li><span>Image 02</span></li>
+            <li><span>Image 03</span></li>
+            <li><span>Image 04</span></li>
+            <li><span>Image 05</span></li>
+            <li><span>Image 06</span></li>
+        </ul></div>
+        <section class="welcome">
+	    <div class="content">
+	    	<h1><span id="wenhou">早上</span>好!</h1>
+	    	<div class="box"></div>
+	    	<h3><span id="place">郑州</span>　今日天气</h3>
+	    	<h3 id="weather">多云</h3>
+	    	<h3>温度：<span id="wendu">16℃-22℃</span>　风力：<span id="feng">2级-6级 东北风</span></h3>
+	    	<div class="right"><h4><span id="years">网络错误</span>　<span id="day">星期三</span></h4><h2 id="nowTime">08:52:36</h2></div>
+	    </div>
+		</section>
+
+        <script language="javascript" type="text/javascript" src="http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js"></script>
+		<script>
+		/*地点开始*/
+            $(document).ready(function(){
+            $("#place").text("" + remote_ip_info.city + "");
+            });
+        </script>
+        <script type="text/javascript">
+        /*年月日开始*/
+           var nowDate = new Date();
+           var year = nowDate.getFullYear();
+           var month = nowDate.getMonth() + 1 < 10 ? "0" + (nowDate.getMonth() + 1): nowDate.getMonth() + 1;
+           var day = nowDate.getDate() < 10 ? "0" + nowDate.getDate() : nowDate.getDate();
+           var dateStr = year + "-" + month + "-" + day;
+           document.getElementById("years").innerHTML = dateStr;
+         
+        </script>
+        <script language=JavaScript>
+        /*星期开始*/
+          var enabled = 0; today = new Date();
+          var day; var date;
+           if(today.getDay()==0) day = " 星期日"
+           if(today.getDay()==1) day = " 星期一"
+           if(today.getDay()==2) day = " 星期二"
+           if(today.getDay()==3) day = " 星期三"
+           if(today.getDay()==4) day = " 星期四"
+           if(today.getDay()==5) day = " 星期五"
+           if(today.getDay()==6) day = " 星期六"
+           document.fgColor = "000000";
+           date = day +"";
+           document.getElementById("day").innerHTML = date;
+      </script>
+        <script language="javaScript"> 
+        /*问候开始*/
+        var now = new Date(),hour = now.getHours() 
+        if(hour < 6){document.getElementById("wenhou").innerHTML = "凌晨";} 
+        else if (hour < 9){document.getElementById("wenhou").innerHTML = "早上";} 
+         else if (hour < 12){document.getElementById("wenhou").innerHTML = "上午";} 
+          else if (hour < 14){document.getElementById("wenhou").innerHTML = "中午";} 
+           else if (hour < 17){document.getElementById("wenhou").innerHTML = "下午";} 
+            else if (hour < 19){document.getElementById("wenhou").innerHTML = "傍晚";} 
+             else if (hour < 22){document.getElementById("wenhou").innerHTML = "晚上";} 
+               else {document.getElementById("wenhou").innerHTML = "夜里";} 
+        </script>
+        <script type="text/javascript">		
+        /*时间开始*/
+       var ns4up1 = (document.layers) ? 1 : 0;  // browser sniffer
+       var ie4up1 = (document.all&&(navigator.appVersion.indexOf("MSIE 4") == -1)) ? 1 : 0;
+       var ns6up1 = (document.getElementById&&!document.all) ? 1 : 0;
+       function nowclock() {
+       if (!ns4up1 && !ie4up1 && !ns6up1) return false;
+          var digital = new Date();
+          var hours = digital.getHours();
+          var minutes = digital.getMinutes();
+          var seconds = digital.getSeconds();
+          var day = digital.getDate();
+          var month = digital.getMonth() + 1;
+          var year = digital.getYear();
+          if (hours > 11) amOrPm = "PM";
+          if (hours > 12) hours = hours - 12;
+          if (hours == 0) hours = 12;
+          if (minutes < 10) minutes = "0" + minutes;
+          if (seconds < 10) seconds = "0" + seconds;
+          if (day < 10) day = "0" + day;
+          if (month < 10) month = "0" + month;
+          dispTime = hours + ":" + minutes + ":" + seconds ;
+          dispTime1 = hours + ":" + minutes;
+          if (ns4up1) {
+             document.layers.nowTime.document.write(dispTime);
+             document.layers.nowTime.document.close();
+             document.layers.nowDate.document.write(dispDate);
+             document.layers.nowDate.document.close();
+          } else if (ns6up1){
+             document.getElementById("nowTime").innerHTML = dispTime;
+          } else if (ie4up1){
+         nowTime.innerHTML = dispTime;
+          } setTimeout("nowclock()", 1000);
+          } nowclock();
+</script>
+        <script type="text/javascript">
+        	          /*天气开始*/
+             var cityUrl = 'http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js';
+             $.getScript(cityUrl, function(script, textStatus, jqXHR) {
+             var citytq = remote_ip_info.city ;// 获取城市
+             var url = "http://php.weather.sina.com.cn/iframe/index/w_cl.php?code=js&city=" + citytq + "&day=0&dfc=3";
+             $.ajax({
+            url : url,
+            dataType : "script",
+            scriptCharset : "gbk",
+            success : function(data) {
+                var _w = window.SWther.w[citytq][0];
+                var _f= _w.f1+"_0.png";
+                if(new Date().getHours() > 17){
+                     _f= _w.f2+"_1.png";                
+                }
+                var img = "<img width='30px' height='30px' src='http://i2.sinaimg.cn/dy/main/weather/weatherplugin/wthIco/20_20/" +_f
+                + "' />";
+                var tq ="&nbsp"+ img +"&nbsp&nbsp&nbsp"+ " " + _w.s1 + " " ;
+                var wd = _w.t1 + "℃～" + _w.t2 + "℃  " ;
+                var fl = _w.d1 + _w.p1 + "级";
+                var tianqi = _w.s1 + " "+_w.t1 + "℃～" + _w.t2 + "℃  "
+                //#weather自己修改,天气样式自己打断点调试
+                $('#weather').html(tq);
+                 $('#wendu').html(wd);
+                  $('#feng').html(fl);
+                  $('.tianqi').html(tianqi);
+            }
+        });
+       });
+         if(typeof(VCOM_extra) == 'function'){
+	                window.onkeypress = kc;	
+             }else{
+	                window.addEventListener('keydown', kc, false);
+             }
+             /*键控*/
+           function kc(){
+	        switch(event.keyCode){
+			case 38://上
+			       break;
+			case 37://左
+			
+				break;
+			case 40://下
+			      alert("123");//调用APK
+			       break;
+			case 39://右
+			
+				break;
+			case 13://进入
+			   
+               $(".welcome").fadeOut(2000,tz);
+               
+			    break;
+			case 8://backspace
+			
+			    break;
+			case 27://esc
+			
+	          break;
+	        }} //键控结束
+	        
+	        function tz(){
+	        	 window.location.href = "main.html";//直接调用APK
+	        }
+        </script>	  	    
+	</body>
+</html>

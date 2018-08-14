@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>凯宾，家的感觉！</title>
+		<link rel="stylesheet" type="text/css" href="css/gb.css"/> <!--全局通用css-->
+		<link rel="stylesheet" type="text/css" href="css/jd.css"/><!--标题css-->
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script><!--全局js-->
+	</head>
+	<style type="text/css">
+	    @font-face {font-family: "s3";src: url("font/dq.otf");}
+	    body{width:1280px;height:720px;overflow:hidden;background: #000;position: fixed;}
+	    a:focus { outline:none;}  
+	    .bgbox{position: fixed;top: 0px;left: 0px;z-index: 00;}
+	    .sjbg{position: absolute;bottom: 0px;left: 60px;z-index: 33;}
+	    .pb{position: absolute;bottom: 100px;left: -600px;z-index: 66;}
+	    .sj{position: absolute;bottom: 80px;left:-545px;z-index: 66;}
+	    .erwm{width:120px;height:140px;overflow:hidden;position: absolute;bottom: 300px;right:60px;z-index: 66;}
+	    .erwm img{width:120px;height:140px;}
+	    .text{width:120px;position: absolute;bottom: 140px;right:55px;z-index: 66;}
+	    .text p{color: #000000;font-family: "s3";font-size: 16px;line-height: 30px;}
+	</style>
+	<body>
+		<audio src="mp3/0.mp3" loop="loop" autoplay></audio><!--背景音乐-->
+		<div class="bgbox"><img src="img/dpbg.jpg"/></div>
+		<div class="ttbox"><!--标题及时间-->
+				<div class="minwidth left">
+				<div class="title"><h1><span>多屏</span>互动</h1></div></div>
+				<div class="rightbox">
+					<span id="shijian">11:31</span>
+					<p id="nian">2017年2月18日</p>
+					<h3 class="tianqi">晴转多云　12℃-22℃</h3>
+				</div>
+		</div>
+		<section class="content">
+			<div class="sjbg"><img src="img/dp_03.png"/></div>
+			<div class="pb "><img src="img/pb1.png"/></div>
+			<div class="sj"><img src="img/sj2.png"/></div>
+			<div class="erwm"><img src="img/dpewm.png"/></div>
+			<div class="text"><p>1.扫描二维码</p><p>2.下载APK</p><p>3.选择共享文件</p><p>4.开启实时共享</p></div>
+		</section>
+		
+        <script type="text/javascript">
+		$(document).ready(function(){
+			
+			$(".pb").animate({left:"120"},1000)
+			        .animate({left:"0"},100)
+			        .animate({left:"36"},1000,function(){
+			        $(".sj").animate({left:"845"},1000)
+			                .animate({left:"400"},200)
+			                .animate({left:"545"},100);
+			             
+			        });
+		})
+		</script>
+		<script type="text/javascript">
+        /*年月日开始*/
+           var nowDate = new Date();
+           var year = nowDate.getFullYear();
+           var month = nowDate.getMonth() + 1 < 10 ? "0" + (nowDate.getMonth() + 1): nowDate.getMonth() + 1;
+           var day = nowDate.getDate() < 10 ? "0" + nowDate.getDate() : nowDate.getDate();
+           var dateStr = year + "-" + month + "-" + day;
+           document.getElementById("nian").innerHTML = dateStr;
+    
+	
+        /*时间开始*/
+       var ns4up1 = (document.layers) ? 1 : 0;  // browser sniffer
+       var ie4up1 = (document.all&&(navigator.appVersion.indexOf("MSIE 4") == -1)) ? 1 : 0;
+       var ns6up1 = (document.getElementById&&!document.all) ? 1 : 0;
+       function nowclock() {
+       if (!ns4up1 && !ie4up1 && !ns6up1) return false;
+          var digital = new Date();
+          var hours = digital.getHours();
+          var minutes = digital.getMinutes();
+          var seconds = digital.getSeconds();
+          var day = digital.getDate();
+          var month = digital.getMonth() + 1;
+          var year = digital.getYear();
+          if (hours > 11) amOrPm = "PM";
+          if (hours > 12) hours = hours - 12;
+          if (hours == 0) hours = 12;
+          if (minutes < 10) minutes = "0" + minutes;
+          if (seconds < 10) seconds = "0" + seconds;
+          if (day < 10) day = "0" + day;
+          if (month < 10) month = "0" + month;
+          dispTime = hours + ":" + minutes;
+          if (ns4up1) {
+             document.layers.nowTime.document.write(dispTime);
+             document.layers.nowTime.document.close();
+             document.layers.nowDate.document.write(dispDate);
+             document.layers.nowDate.document.close();
+          } else if (ns6up1){
+             document.getElementById("shijian").innerHTML = dispTime;
+          } else if (ie4up1){
+          nowTime.innerHTML = dispTime;
+          } setTimeout("nowclock()", 1000);
+          } nowclock();
+
+        
+        	          /*天气开始*/
+             var cityUrl = 'http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js';
+             $.getScript(cityUrl, function(script, textStatus, jqXHR) {
+             var citytq = remote_ip_info.city ;// 获取城市
+             var url = "http://php.weather.sina.com.cn/iframe/index/w_cl.php?code=js&city=" + citytq + "&day=0&dfc=3";
+             $.ajax({
+            url : url,
+            dataType : "script",
+            scriptCharset : "gbk",
+            success : function(data) {
+                var _w = window.SWther.w[citytq][0];
+                var _f= _w.f1+"_0.png";
+                if(new Date().getHours() > 17){
+                     _f= _w.f2+"_1.png";                
+                }
+                var img = "<img width='30px' height='30px' src='http://i2.sinaimg.cn/dy/main/weather/weatherplugin/wthIco/20_20/" +_f
+                + "' />";
+                var tq ="&nbsp"+ img +"&nbsp&nbsp&nbsp"+ " " + _w.s1 + " " ;
+                var wd = _w.t1 + "℃～" + _w.t2 + "℃  " ;
+                var fl = _w.d1 + _w.p1 + "级";
+                var tianqi = _w.s1 + " "+_w.t1 + "℃～" + _w.t2 + "℃  "
+                //#weather自己修改,天气样式自己打断点调试
+                  $('.tianqi').html(tianqi);
+            }
+        });
+       });
+		</script>
+	</body>
+</html>

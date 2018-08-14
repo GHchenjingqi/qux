@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>凯宾，家的感觉！</title>
+		<link rel="stylesheet" type="text/css" href="css/gb.css"/> <!--全局通用css-->
+		<link rel="stylesheet" type="text/css" href="css/jd.css"/><!--标题css-->
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script><!--全局js-->
+	</head>
+	<style type="text/css">
+		@font-face {font-family: "s3";src: url("font/dq.otf");}
+	    body{width:1280px;height:720px;overflow:hidden;background: #000;position: fixed;}
+	    a:focus { outline:none;}  
+	    .bg{width: 1280px;height: 720px;background: linear-gradient(#f53c60,#7f10c4); background: -ms-linear-gradient(top,  #f53c60,#7f10c4); background: -o-linear-gradient(#f53c60,#7f10c4); background: -webkit-linear-gradient(#f53c60,#7f10c4); background:-moz-linear-gradient(#f53c60,#7f10c4);z-index: 00;overflow:hidden;}
+	    .anniu{width:1160px;height: 60px;padding:60px 60px;background: url(img/anbg.png) no-repeat;position: absolute;bottom: 40px;}
+	    .dtcon{width: 100%;height: 350px;position: absolute;bottom: 220px;z-index: 999;}
+	    .dtcon ul li{width:32%;height:350px;float: left;margin-right: 20px;text-align: center;position: relative;}
+	    .djs{background: url(img/djs.png) no-repeat;text-align: center;}
+	    .paly{width: 180px;height: 180px;background:url(img/play.png) no-repeat ;position: absolute;left: 553px;bottom: 0px;}
+	    .timer{color: #fff;font-size: 42px;font-family: "s3";line-height: 500px;}
+	    .begin{position: absolute;top:70px;left: 72px;}
+	    .xg{width:230px;height:180px;float: left;color:#626262;text-align: center;position: relative;}
+	    .xg span{font-size:27px;font-family:"s3";max-height:62px;padding:14px 38px;background: #f0f0f0;border-radius: 12px;box-shadow: 0px 2px 2px #5a0584;}
+	    .message{width:100%;height:40px;margin:0px 30px;font-size:16px;font-family:"s3";line-height:40px;color: #a8a8a8;position: absolute;bottom: 0px;}
+	    .leftc{position: absolute;left: 40px;bottom: 0px;z-index: 666;}
+	    #kuan{width: 1230px;overflow: hidden;}
+	    #dingwei{position: absolute;left:440px;bottom: 0px;z-index: 999999;}
+	</style>
+	<body>
+		<audio  id="audio" controls="controls" preload hidden src=""></audio>
+		<div class="bg">
+			<div class="ttbox"><!--标题及时间-->
+				<div class="minwidth left">
+				<div class="title"><h1><span>助眠</span>音乐</h1></div></div>
+				<div class="rightbox">
+					<span id="shijian">11:31</span>
+					<p id="nian">2017年2月18日</p>
+					<h3 class="tianqi">晴转多云　12℃-22℃</h3>
+				</div>
+		     </div>
+		    <div class="dtcon">
+		    	<ul>
+		    		<li id="kuan" ><canvas class="leftc" id='canvas' width="1280" height="220"></canvas> </li>
+		    		<li class="djs" id="dingwei"><span id="djs" class="timer">01:00:00</span></li>
+		    		
+		    	</ul>	
+		    </div>
+		    <div class="anniu">
+		    		<div class="xg"><img class="one" src="img/syxz0.png"/></div>
+		    		<div class="xg"><img class="two" src="img/synom1.png"/></div>
+		    		<div class="xg"></div>
+		    		<div class="paly"><img  class="begin" src="img/syzt.png"/></div>
+		    		<div class="xg"><img class="three" src="img/synom2.png"/></div>
+		    		<div class="xg"><img class="four" src="img/synom3.png"/></div>
+		    </div>
+		    <div class="message">温馨提示：睡眠音乐曲目不可更换，选用令人放松·节奏舒缓的轻音乐或钢琴曲目；音量会根据时间的减少渐渐减弱，睡眠模式开启之后，电视机将会息屏，进入睡眠模式</div>
+		</div>
+		<script language="JavaScript">
+         window.onload = function() {    
+        //页面加载完成之后，通过给audio添加autoplay属性，音频下载完成之后自动播放
+           var oAudio = document.getElementById('audio');        
+               oAudio.src = ''; 
+ 　              }
+        //mp3文件名
+           var mp3List = [
+                '0.mp3',
+                '1.mp3',
+                '2.mp3',
+                '3.mp3',
+                '4.mp3'
+                ],
+            //文件路径
+            baseUrl = 'mp3/';
+            function getMusic(list) {
+                var len = list.length,
+                num = parseInt(Math.random()*len, 10),
+                music = baseUrl + list[num];
+                if(music) {
+            	return music;
+                } else {
+                getMusic(list, baseUrl);  
+                }
+              }
+              canPlay(playAudio);
+                    //查看是否支持audio标签，如果支持，预加载当前指向mp3文件
+               function canPlay(callback) {           
+                   var currentFile = getMusic(mp3List);
+                       try {
+                          var audio = new Audio();
+                          audio.oncanplay = function() {
+                          callback(currentFile);
+                    }
+                audio.src = currentFile;
+                audio.load();
+                    }catch(e){
+                    callback(false, e);
+               }
+             }
+         
+        //play
+        function playAudio(currentFile) {
+            // Check for audio element support.
+            if (window.HTMLAudioElement && currentFile) {
+                try {
+                    var oAudio = document.getElementById('audio');
+                     
+                    oAudio.src = currentFile;
+ 
+                    if (oAudio.paused) {
+                        oAudio.play();
+                    }
+                    else {
+                        oAudio.pause();
+                    }
+ 
+                    oAudio.onended = function() {
+                        oAudio.src = getMusic(mp3List);
+                        oAudio.pause();
+                    }
+ 
+                }
+                catch (e) {
+                    // Fail silently but show in F12 developer tools console
+                     if(window.console && console.error("Error:" + e));
+                }
+            }
+        }
+ </script>
+		<script src="js/main.js"></script><!--跳跃音符js-->
+		<script language="JavaScript">
+			var th;//1小时，按秒计算   
+	        var timer = setInterval("ct()",1000);  
+	        var i = 0 ;
+	        var audio = document.getElementById('audio'); 
+
+	      
+	 //键控开始
+			if(typeof(VCOM_extra) == 'function'){
+            window.onkeypress = kc;	
+            }else{
+	                window.addEventListener('keydown', kc, false);
+            }
+             /*键控*/
+           function kc(){
+           	
+	        switch(event.keyCode){
+			case 38://上
+			       break;
+			case 37://左
+			if(i>0){
+			    i--;
+			    
+				move();	
+				 
+			}
+				break;
+			case 40://下
+			       break;
+			case 39://右
+			if(i<3){
+			   i++;
+			
+			   move();  
+			      
+			  }
+				break;
+			case 13://进入
+			   
+			    if(audio.paused){                 
+                audio.play();//audio.play();// 这个就是播放 
+                $(".begin").attr("src","img/syzt.png");
+                    if(audio.play){
+                 	   tt();
+                      }
+                }else{
+                audio.pause();// 这个就是暂停
+                  if(audio.paused){   
+                  	 
+                  }
+                $(".begin").attr("src","img/ks.png");
+                }
+			    
+			    break;
+			case 27:
+			    rg();
+			    break;
+		    }
+	        } //键控结束
+	       
+              function tt(){
+	        	switch (i){
+	        		case 0:
+	        		th = 60*60;
+	        		break;
+	        		case 1:
+	        		th = 45*60;
+	        		break;
+	        		case 2:
+	        		th = 30*60;
+	        		break;
+	        		case 3:
+	        		th = 15*60;
+	        		break;
+	        	}
+	        }
+	        //计时器部分
+	        function ct(){   
+                     if(th>=0){   
+                         m = Math.floor(th/60);   
+                         s = Math.floor(th%60);  
+                         m = m < 10 ? "0" + m : m;
+                         s = s < 10 ? "0" + s : s;
+                         msg = "00"+":"+m+":"+s;   
+                      
+                         document.all["djs"].innerHTML=msg;   
+                         if(th < 30*60){ 
+                         	audio.volume = 0.5;//音量大小；                   	
+                         };
+                         if(th < 15*60){ 
+                         	audio.volume = 0.3;//音量大小； 	
+                         };
+                         if(th < 5*60){ 
+                         	audio.volume = 0.1;//音量大小；
+                         };
+                         --th;   
+                      }   
+                     if(th == 0){   
+                     	 $(".begin").attr("src","img/ks.png");
+                         clearInterval(timer);   //清除计时器
+                         $("#audio").remove();//移除audio元素  
+                      }   
+            }  
+           
+	       //左右移动
+	        function move(){
+	        	switch(i){
+	        		case 0:
+	        		$(".one").attr("src","img/syxz0.png");
+	        		$(".two").attr("src","img/synom1.png");
+	        		$(".timer").text("01:00:00");
+	        		break;
+	        		case 1:
+	        	    $(".one").attr("src","img/synom0.png");
+	        	    $(".two").attr("src","img/syxz1.png");
+	        	    $(".three").attr("src","img/synom2.png");
+	        	    $(".timer").text("00:45:00");
+	        		break;
+	        		case 2:
+	        		$(".two").attr("src","img/synom1.png");
+	        	    $(".three").attr("src","img/syxz2.png");
+	        	    $(".four").attr("src","img/synom3.png");	
+	        	    $(".timer").text("00:30:00");
+	        		break;
+	        		case 3:
+	        		$(".three").attr("src","img/synom2.png");
+	        	    $(".four").attr("src","img/syxz3.png");
+	        	    $(".timer").text("00:15:00");
+	        		break;
+	        	}
+	        }
+			
+		</script>
+		<script type="text/javascript">
+        /*年月日开始*/
+           var nowDate = new Date();
+           var year = nowDate.getFullYear();
+           var month = nowDate.getMonth() + 1 < 10 ? "0" + (nowDate.getMonth() + 1): nowDate.getMonth() + 1;
+           var day = nowDate.getDate() < 10 ? "0" + nowDate.getDate() : nowDate.getDate();
+           var dateStr = year + "-" + month + "-" + day;
+           document.getElementById("nian").innerHTML = dateStr;
+    
+	
+        /*时间开始*/
+       var ns4up1 = (document.layers) ? 1 : 0;  // browser sniffer
+       var ie4up1 = (document.all&&(navigator.appVersion.indexOf("MSIE 4") == -1)) ? 1 : 0;
+       var ns6up1 = (document.getElementById&&!document.all) ? 1 : 0;
+       function nowclock() {
+       if (!ns4up1 && !ie4up1 && !ns6up1) return false;
+          var digital = new Date();
+          var hours = digital.getHours();
+          var minutes = digital.getMinutes();
+          var seconds = digital.getSeconds();
+          var day = digital.getDate();
+          var month = digital.getMonth() + 1;
+          var year = digital.getYear();
+          if (hours > 11) amOrPm = "PM";
+          if (hours > 12) hours = hours - 12;
+          if (hours == 0) hours = 12;
+          if (minutes < 10) minutes = "0" + minutes;
+          if (seconds < 10) seconds = "0" + seconds;
+          if (day < 10) day = "0" + day;
+          if (month < 10) month = "0" + month;
+          dispTime = hours + ":" + minutes;
+          if (ns4up1) {
+             document.layers.nowTime.document.write(dispTime);
+             document.layers.nowTime.document.close();
+             document.layers.nowDate.document.write(dispDate);
+             document.layers.nowDate.document.close();
+          } else if (ns6up1){
+             document.getElementById("shijian").innerHTML = dispTime;
+          } else if (ie4up1){
+          nowTime.innerHTML = dispTime;
+          } setTimeout("nowclock()", 1000);
+          } nowclock();
+
+        
+        	          /*天气开始*/
+             var cityUrl = 'http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js';
+             $.getScript(cityUrl, function(script, textStatus, jqXHR) {
+             var citytq = remote_ip_info.city ;// 获取城市
+             var url = "http://php.weather.sina.com.cn/iframe/index/w_cl.php?code=js&city=" + citytq + "&day=0&dfc=3";
+             $.ajax({
+            url : url,
+            dataType : "script",
+            scriptCharset : "gbk",
+            success : function(data) {
+                var _w = window.SWther.w[citytq][0];
+                var _f= _w.f1+"_0.png";
+                if(new Date().getHours() > 17){
+                     _f= _w.f2+"_1.png";                
+                }
+                var img = "<img width='30px' height='30px' src='http://i2.sinaimg.cn/dy/main/weather/weatherplugin/wthIco/20_20/" +_f
+                + "' />";
+                var tq ="&nbsp"+ img +"&nbsp&nbsp&nbsp"+ " " + _w.s1 + " " ;
+                var wd = _w.t1 + "℃～" + _w.t2 + "℃  " ;
+                var fl = _w.d1 + _w.p1 + "级";
+                var tianqi = _w.s1 + " "+_w.t1 + "℃～" + _w.t2 + "℃  "
+                //#weather自己修改,天气样式自己打断点调试
+                  $('.tianqi').html(tianqi);
+            }
+        });
+       });
+		</script>
+	</body>
+</html>

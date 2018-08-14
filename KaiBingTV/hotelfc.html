@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>酒店风采</title>
+		<link rel="stylesheet" type="text/css" href="css/gb.css"/> <!--全局通用css-->
+		<link rel="stylesheet" type="text/css" href="css/jd.css"/>
+	    <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script><!--全局js--> 
+	    <script src="js/gdlb.js"></script>
+	</head>
+	<body>
+		<audio src="mp3/0.mp3" loop="loop" autoplay></audio><!--背景音乐-->
+		</style>
+		<section class="htjd">
+			<!--底部轮播-->
+			<div class="banfc">
+			<div id="ban1">
+               <div class="banner">
+	           <ul class="img">
+    	           <li><a href="#"><img src="images/1.jpg"></a></li>
+                   <li><a href="#"><img src="images/2.jpg"></a></li>
+                   <li><a href="#"><img src="images/3.jpg"></a></li>     
+               </ul>
+               <ul class="num">    	
+               </ul>
+               <div class="btn btn_l">&lt;</div>
+               <div class="btn btn_r">&gt;</div>
+            </div></div>
+			</div>
+			<div class="ttbox"><!--标题及时间-->
+				<div class="minwidth left">
+				<div class="title"><h1><span>酒店</span>风采</h1></div></div>
+				<div class="rightbox">
+					<span id="shijian">11:31</span>
+					<p id="nian">2017年2月18日</p>
+					<h3 class="tianqi">晴转多云　12℃-22℃</h3>
+				</div>
+		     </div>
+		</section>
+		<script type="text/javascript">
+        /*年月日开始*/
+           var nowDate = new Date();
+           var year = nowDate.getFullYear();
+           var month = nowDate.getMonth() + 1 < 10 ? "0" + (nowDate.getMonth() + 1): nowDate.getMonth() + 1;
+           var day = nowDate.getDate() < 10 ? "0" + nowDate.getDate() : nowDate.getDate();
+           var dateStr = year + "-" + month + "-" + day;
+           document.getElementById("nian").innerHTML = dateStr;
+    
+	
+        /*时间开始*/
+       var ns4up1 = (document.layers) ? 1 : 0;  // browser sniffer
+       var ie4up1 = (document.all&&(navigator.appVersion.indexOf("MSIE 4") == -1)) ? 1 : 0;
+       var ns6up1 = (document.getElementById&&!document.all) ? 1 : 0;
+       function nowclock() {
+       if (!ns4up1 && !ie4up1 && !ns6up1) return false;
+          var digital = new Date();
+          var hours = digital.getHours();
+          var minutes = digital.getMinutes();
+          var seconds = digital.getSeconds();
+          var day = digital.getDate();
+          var month = digital.getMonth() + 1;
+          var year = digital.getYear();
+          if (hours > 11) amOrPm = "PM";
+          if (hours > 12) hours = hours - 12;
+          if (hours == 0) hours = 12;
+          if (minutes < 10) minutes = "0" + minutes;
+          if (seconds < 10) seconds = "0" + seconds;
+          if (day < 10) day = "0" + day;
+          if (month < 10) month = "0" + month;
+          dispTime = hours + ":" + minutes;
+          if (ns4up1) {
+             document.layers.nowTime.document.write(dispTime);
+             document.layers.nowTime.document.close();
+             document.layers.nowDate.document.write(dispDate);
+             document.layers.nowDate.document.close();
+          } else if (ns6up1){
+             document.getElementById("shijian").innerHTML = dispTime;
+          } else if (ie4up1){
+          nowTime.innerHTML = dispTime;
+          } setTimeout("nowclock()", 1000);
+          } nowclock();
+
+        
+        	          /*天气开始*/
+             var cityUrl = 'http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js';
+             $.getScript(cityUrl, function(script, textStatus, jqXHR) {
+             var citytq = remote_ip_info.city ;// 获取城市
+             var url = "http://php.weather.sina.com.cn/iframe/index/w_cl.php?code=js&city=" + citytq + "&day=0&dfc=3";
+             $.ajax({
+            url : url,
+            dataType : "script",
+            scriptCharset : "gbk",
+            success : function(data) {
+                var _w = window.SWther.w[citytq][0];
+                var _f= _w.f1+"_0.png";
+                if(new Date().getHours() > 17){
+                     _f= _w.f2+"_1.png";                
+                }
+                var img = "<img width='30px' height='30px' src='http://i2.sinaimg.cn/dy/main/weather/weatherplugin/wthIco/20_20/" +_f
+                + "' />";
+                var tq ="&nbsp"+ img +"&nbsp&nbsp&nbsp"+ " " + _w.s1 + " " ;
+                var wd = _w.t1 + "℃～" + _w.t2 + "℃  " ;
+                var fl = _w.d1 + _w.p1 + "级";
+                var tianqi = _w.s1 + " "+_w.t1 + "℃～" + _w.t2 + "℃  "
+                //#weather自己修改,天气样式自己打断点调试
+                  $('.tianqi').html(tianqi);
+            }
+        });
+       });
+	
+       if(typeof(VCOM_extra) == 'function'){
+	                window.onkeypress = kc;	
+             }else{
+	                window.addEventListener('keydown', kc, false);
+             }
+             /*键控*/
+           function kc(){
+	        switch(event.keyCode){
+			case 38://上
+			       break;
+			case 37://左
+			
+				break;
+			case 40://下
+			      alert("123");//调用APK
+			       break;
+			case 39://右
+			
+				break;
+			case 13://进入
+                window.location.href = "#";//直接调用APK
+			    break;
+			case 8://backspace
+			
+			    break;
+			case 27://esc
+			
+	          break;
+	        }} //键控结束
+        </script>	
+	</body>
+</html>

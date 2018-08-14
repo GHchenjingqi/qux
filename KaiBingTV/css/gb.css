@@ -1,0 +1,29 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/* reset */
+html{-webkit-text-size-adjust:none;}
+body,h1,div,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td{margin:0px;padding:0px;}
+
+body{font-family:Arial,\5FAE\8F6F\96C5\9ED1, tahoma, arial, \5b8b\4f53, sans-serif; font-size:12px; text-align:left; background:#FFFFFF; color:#000; }
+table,input,textarea,select{font-size:12px;}
+h1,h2,h3,h4,h5,h6{font-size:12px;font-weight:normal} 
+a{text-decoration:none; color: #000;}
+a:hover{text-decoration:none; color: #0b50a1}
+ul,ol,li{list-style:none}
+fieldset,img{border:none}
+table{border-collapse:collapse;}
+textarea{resize:none;}
+img{border:0; }
+address,cite,dfn,em,var{font-style:normal;}
+article,aside,dialog,footer,header,section,footer,nav,figure{display:block;}/*html5 reset IE*/
+.xs{display: block;}
+.yc{display: none;}
+.left{float: left;}
+.right{float: right;}
+.clearfloat:after{content:".";display:block;clear:both;visibility:hidden;height:0;}
+.clearfloat{zoom:1}
+@font-face {font-family: "s3";src: url("font/dq.otf");}
+ body{width:1280px;height:720px;overflow:hidden;background: #000;}
+a:focus { outline:none;}  
+/* end of reset */

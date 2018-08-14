@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>凯宾，家的感觉！</title>
+		<link rel="stylesheet" type="text/css" href="css/gb.css"/> <!--全局通用css-->
+		<link rel="stylesheet" type="text/css" href="css/jd.css"/>
+	    <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script><!--全局js-->  
+	    <script src="js/gdlb.js"></script>
+	</head>
+	  <style type="text/css">
+	  @font-face {font-family: "s3";src: url("font/dq.otf");}
+	    body{width:1280px;height:720px;overflow:hidden;background: #000;}
+	    a:focus { outline:none;}  
+	    .bgbox{position: fixed;top: 0px;left: 0px;z-index: 22;}
+	    .celan{width:300px;height:720px;background: rgba(0,0,0,0.5);position: fixed;z-index: 99999;top: 0px;left: 0px;}
+	    .banner{/*  修改输出屏大小  */ width: 550px; height: 300px; overflow: hidden; position: relative; margin-left: auto; margin-right: auto; }
+        .banner .img{width: 99999px; position:absolute; left:0px; top:0;}
+        .banner .img li{ float:left;}
+/*/ 修改图片大小 /*/
+        .banner .img img{ width: 550px;}
+/*/ 小圆圈 /*/
+        .banner .num{ position:absolute; width:100%; bottom:10px; left:0; text-align:center; font-size:0px;}
+        .banner .num li{ width:10px;height:10px; background:rgba(0,0,0,0.5); border-radius:50%; display:inline-block; margin:0 3px; cursor:pointer;}
+        .banner .num li.on{ background:#fff;}
+/*/ 按钮 /*/
+        .banner .btn{ width:30px; height:50px; background:rgba(0,0,0,0.5); position:absolute; top:50%; margin-top:-25px; cursor:pointer; text-align:center; line-height:50px; color:#fff; font-size:40px; font-family:"宋体"; display:none;}
+        .banner:hover .btn{ display:block;}
+        .banner .btn_l{ left:0;}
+        .banner .btn_r{ right:0;}
+/*/ 第一个轮播 /*/
+        
+        #ban1 .banner,#ban2 .banner,#ban3 .banner{width: 1280px;height:720px;margin:0px auto;}
+        #ban1 .banner .img img, #ban2 .banner .img img,#ban3 .banner .img img{width: 1280px;height:720px;}
+     
+     .title h1{color: #fff;font-family: "s3";font-size: 45px;text-align: center;padding-top:30px;}
+     .title span{padding-bottom: 15px;border-bottom: 2px solid #fff;}
+     .up{text-align: center;margin-top: 35px;margin-bottom: 5px;}
+     .down{text-align: center;margin-top: -10px;}
+     .fenlei{height: 480px;width: 300px;text-align: center;overflow: hidden;margin-top: 20px;}
+     .fenlei ul li{width: 220px;height: 135px;margin: 0px auto 15px auto;background: #00B4FF;border-radius: 15px;position: relative;}
+	 .fenlei ul li img{width: 220px;height: 135px;border-radius: 15px;}
+     .act{border: 2px solid  #00f5ff;box-shadow: 0px 1px 2px #00F5FF;z-index: 9999;}
+     .little{color: #FFFFFF;font-family: "s3";font-size: 18px;background: rgba(0,0,0,0.5);width: 220px;height: 30px;line-height:30px;position: absolute;bottom: 0px;border-bottom-left-radius: 15px;border-bottom-right-radius: 15px;}
+	  </style>
+	<body>
+		<audio src="mp3/0.mp3" loop="loop" autoplay></audio><!--背景音乐-->
+		<section class="bgbox">
+			<div id="ban1" >
+               <div class="banner"><!--少林寺-->
+	           <ul class="img">
+    	           <li><a href="#"><img src="images/sl/sl01.jpg"></a></li>
+                   <li><a href="#"><img src="images/sl/sl02.jpg"></a></li>
+                   <li><a href="#"><img src="images/sl/sl03.jpg"></a></li> 
+                   <li><a href="#"><img src="images/sl/sl04.jpg"></a></li>
+                   <li><a href="#"><img src="images/sl/sl05.jpg"></a></li> 
+               </ul>
+               <ul class="num">    	
+               </ul>
+               <div class="btn btn_l">&lt;</div>
+               <div class="btn btn_r">&gt;</div>
+            </div></div>
+			<div id="ban2" class="yc"><!--龙门-->
+			   <div class="banner">
+	           <ul class="img">
+    	           <li><a href="#"><img src="images/lm/lm01.jpeg"></a></li>
+                   <li><a href="#"><img src="images/lm/lm02.jpg"></a></li>
+                   <li><a href="#"><img src="images/lm/lm03.JPG"></a></li>  
+                   <li><a href="#"><img src="images/lm/lm04.jpg"></a></li>
+                   <li><a href="#"><img src="images/lm/lm05.jpg"></a></li> 
+               </ul>
+               <ul class="num">    	
+               </ul>
+               <div class="btn btn_l">&lt;</div>
+               <div class="btn btn_r">&gt;</div>
+			</div></div>
+		    <div id="ban3" class="yc"><!--清明周边-->
+               <div class="banner">
+	           <ul class="img">
+    	           <li><a href="#"><img src="images/qm/qm01.jpg"></a></li>
+                   <li><a href="#"><img src="images/qm/qm02.jpg"></a></li>
+                   <li><a href="#"><img src="images/qm/qm03.jpg"></a></li>
+                   <li><a href="#"><img src="images/qm/qm04.jpg"></a></li>
+                   <li><a href="#"><img src="images/qm/qm05.jpg"></a></li>  
+               </ul>
+               <ul class="num">    	
+               </ul>
+               <div class="btn btn_l">&lt;</div>
+               <div class="btn btn_r">&gt;</div>
+            </div></div>
+		   
+		</section>
+		<section class="celan">
+			<div class="title"><h1><span>周边</span>趣玩</h1></div>
+			<div class="up"><img src="img/up.png"/></div>
+			<div class="fenlei">
+			   <ul>
+			   	<li  class="list act" id="one"><img src="images/sl/sltt.jpg"/><h3 class="little">登封少林寺</h3></li>
+			   	<li class="list" id="two"><img src="images/lm/lm02.jpg"/><h3 class="little">洛阳龙门</h3></li>
+			   	<li class="list" id="three"><img src="images/qm/qm01.jpg"/><h3 class="little">清明上河园</h3></li>
+			   </ul>
+			</div>
+			<div class="down"><img src="img/down.png"/></div>
+		</section>
+		<div class="ttbox"><!--标题及时间-->
+				<div class="minwidth left">
+				<div class="title"><h1><span>周边</span>趣玩</h1></div></div>
+				<div class="rightbox">
+					<span id="shijian">11:31</span>
+					<p id="nian">2017年2月18日</p>
+					<h3 class="tianqi">晴转多云　12℃-22℃</h3>
+				</div>
+			</div>
+		<script type="text/javascript">
+		   var t = $(".list").length;
+		   var i = 0;
+		   var $cl = $(".celan");
+		   var timer= setTimeout(qw,30000); //侧栏自动往左隐藏
+		   var $title = $(".title");
+		 //键控开始
+		   if(typeof(VCOM_extra) == 'function'){
+            window.onkeypress = kc;	
+            }else{
+	                window.addEventListener('keydown', kc, false);
+            }
+             /*键控*/
+           function kc(){
+	        switch(event.keyCode){
+			case 38://上
+			if(i>0){
+			       i--;
+			       move();
+			      }
+			       break;
+			case 37://左
+				$cl.animate({left:"-300px"},1000);//侧栏往左移动
+				
+				break;
+			case 40://下
+			if(i<t-1){
+			       i++;
+			       move();
+			}
+			       break;
+			case 39://右
+			    $(".celan").animate({left:"0px"},1000);//侧栏向右显示
+			   
+				break;
+			case 13://进入
+			    pd();
+			    break;
+			case 27:
+			    rg();
+			    break;
+		    }
+	        } 
+	    function pd(){
+		   var w =$(".celan").offset().left;//判断侧栏左侧的位置w
+		   	if(w==0){
+			    enter();//显示的时候调用enter
+			   }
+			if(w<0){
+			    rg();//隐藏的时候调用rg
+			   }
+		   }
+		   function rg(){
+		   	$cl.animate({left:"0px"},1000);
+		   
+		   }
+		   function qw(){
+		   	$cl.animate({left:"-300px"},1000);
+		   
+		   }
+	     function move(){
+	     	 switch (i){
+	     	    case 0:
+           		$("#one").addClass("act");
+           		$("#two").removeClass("act");
+           	
+           		break;
+           		case 1:
+           		$("#one").removeClass("act");
+           		$("#two").addClass("act");
+           		$("#three").removeClass("act");
+           		
+           		break;
+                case 2:
+                $("#two").removeClass("act");
+           		$("#three").addClass("act");
+           		break;
+	     	  }
+	     }
+	     function enter(){
+	     	switch (i){
+	     	    case 0:
+           		$("#ban1").show();
+           		$("#ban2").hide();
+           	    $("#ban3").hide();
+           		break;
+           		case 1:
+           		$("#ban1").hide();
+           		$("#ban2").show();
+           	    $("#ban3").hide();
+           		
+           		break;
+                case 2:
+              $("#ban1").hide();
+           		$("#ban2").hide();
+           	    $("#ban3").show();
+           		break;
+	     	  }
+	     }
+		</script>
+		  <script type="text/javascript">
+        /*年月日开始*/
+           var nowDate = new Date();
+           var year = nowDate.getFullYear();
+           var month = nowDate.getMonth() + 1 < 10 ? "0" + (nowDate.getMonth() + 1): nowDate.getMonth() + 1;
+           var day = nowDate.getDate() < 10 ? "0" + nowDate.getDate() : nowDate.getDate();
+           var dateStr = year + "-" + month + "-" + day;
+           document.getElementById("nian").innerHTML = dateStr;
+        </script>
+        <script type="text/javascript">		
+        /*时间开始*/
+       var ns4up1 = (document.layers) ? 1 : 0;  // browser sniffer
+       var ie4up1 = (document.all&&(navigator.appVersion.indexOf("MSIE 4") == -1)) ? 1 : 0;
+       var ns6up1 = (document.getElementById&&!document.all) ? 1 : 0;
+       function nowclock() {
+       if (!ns4up1 && !ie4up1 && !ns6up1) return false;
+          var digital = new Date();
+          var hours = digital.getHours();
+          var minutes = digital.getMinutes();
+          var seconds = digital.getSeconds();
+          var day = digital.getDate();
+          var month = digital.getMonth() + 1;
+          var year = digital.getYear();
+          if (hours > 11) amOrPm = "PM";
+          if (hours > 12) hours = hours - 12;
+          if (hours == 0) hours = 12;
+          if (minutes < 10) minutes = "0" + minutes;
+          if (seconds < 10) seconds = "0" + seconds;
+          if (day < 10) day = "0" + day;
+          if (month < 10) month = "0" + month;
+          dispTime = hours + ":" + minutes;
+          if (ns4up1) {
+             document.layers.nowTime.document.write(dispTime);
+             document.layers.nowTime.document.close();
+             document.layers.nowDate.document.write(dispDate);
+             document.layers.nowDate.document.close();
+          } else if (ns6up1){
+             document.getElementById("shijian").innerHTML = dispTime;
+          } else if (ie4up1){
+          nowTime.innerHTML = dispTime;
+          } setTimeout("nowclock()", 1000);
+          } nowclock();
+</script>
+        <script type="text/javascript">
+        	          /*天气开始*/
+             var cityUrl = 'http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js';
+             $.getScript(cityUrl, function(script, textStatus, jqXHR) {
+             var citytq = remote_ip_info.city ;// 获取城市
+             var url = "http://php.weather.sina.com.cn/iframe/index/w_cl.php?code=js&city=" + citytq + "&day=0&dfc=3";
+             $.ajax({
+            url : url,
+            dataType : "script",
+            scriptCharset : "gbk",
+            success : function(data) {
+                var _w = window.SWther.w[citytq][0];
+                var _f= _w.f1+"_0.png";
+                if(new Date().getHours() > 17){
+                     _f= _w.f2+"_1.png";                
+                }
+                var img = "<img width='30px' height='30px' src='http://i2.sinaimg.cn/dy/main/weather/weatherplugin/wthIco/20_20/" +_f
+                + "' />";
+                var tq ="&nbsp"+ img +"&nbsp&nbsp&nbsp"+ " " + _w.s1 + " " ;
+                var wd = _w.t1 + "℃～" + _w.t2 + "℃  " ;
+                var fl = _w.d1 + _w.p1 + "级";
+                var tianqi = _w.s1 + " "+_w.t1 + "℃～" + _w.t2 + "℃  "
+                //#weather自己修改,天气样式自己打断点调试
+                  $('.tianqi').html(tianqi);
+            }
+        });
+       });
+        </script>	
+	</body>
+</html>
