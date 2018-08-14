@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>郑州电子科技中等专业学校</title>
+		<link rel="stylesheet" type="text/css" href="css/globle.css"/>
+		<link rel="stylesheet" type="text/css" href="css/main.css"/>
+		<script src="js/jquery-1.10.2.js" type="text/javascript" charset="utf-8"></script>	
+		<link rel="stylesheet" type="text/css" href="css/lrtk.css" />
+		<script src="js/modernizr.custom.js"></script>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="nav">
+				<div class="topbg">
+					<div class="main">
+					<div class="logo"><a href="index.html"><img src="img/logo.png"/></a></div>
+					</div>
+				</div>
+				<div class="navlist">
+					<div class="main">
+					<ul>
+						<li><a class="cur" href="index.html">首页</a></li>
+						<li><a href="about.html">学校概况</a></li>
+						<li><a href="specil.html">特色专业</a></li>
+						<li><a href="plan.html">招生计划</a></li>
+						<li><a href="guide.html">报考指南</a></li>
+						<li><a href="employ.html">就业指导</a></li>
+						<li><a href="student.html">优秀学员</a></li>
+						<li><a href="enroll.html">报名方式</a></li>
+					</ul>
+					</div>
+				</div>
+			</div>
+			<div class="banner">
+				<div class="container">
+				    <div id="boxgallery" class="boxgallery" data-effect="effect-1">
+				        <div class="panel"><img src="images/banner1.jpg" alt="Image 1"/></div>
+				        <div class="panel"><img src="images/banner1.jpg" alt="Image 2"/></div>
+				        <div class="panel"><img src="images/banner1.jpg" alt="Image 3"/></div>
+				        <div class="panel"><img src="images/banner1.jpg" alt="Image 4"/></div>
+				    </div>
+				</div>
+				<script src="js/classie.js"></script>
+				<script src="js/boxesfx.js"></script>
+				<script>
+				    new BoxesFx( document.getElementById( 'boxgallery' ) );
+				</script>
+			</div>
+			<div class="conter">
+				<div class="firstbox">
+					<div class="main">
+						<div class="firstop"><a href="#"><img src="img/sdkj1.png"/></a> <a href="#"><img src="img/sdkj2.png"/></a></div>
+						<div class="firstbot">
+							<div class="sliderbox">
+								<div id="btn-left" class="arrow-btn"><img src="img/sdkj7.png"/></div>
+								<div class="slider">
+									<ul>
+										<li><a href="specil.html#qx" ><img src="img/sdkj3.png"/></a></li>
+										<li><a href="specil.html#tx" ><img src="img/sdkj4.png"/></a></li>
+										<li><a href="specil.html#cs" ><img src="img/sdkj5.png"/></a></li>
+										<li><a href="specil.html#hl" ><img src="img/sdkj6.png"/></a></li>
+										<li><a href="specil.html#yy" ><img src="img/sdkj3.png"/></a></li>
+										<li><a href="specil.html#dz" ><img src="img/sdkj4.png"/></a></li>
+										<li><a href="specil.html#jy" ><img src="img/sdkj5.png"/></a></li>
+										<li><a href="specil.html#jd" ><img src="img/sdkj6.png"/></a></li>
+										<li><a href="specil.html#jw" ><img src="img/sdkj5.png"/></a></li>
+										<li><a href="specil.html#kj" ><img src="img/sdkj6.png"/></a></li>
+									</ul>
+								</div>
+								<div id="btn-right" class="arrow-btn"><img src="img/logo_03.png"/></div>
+							</div>
+							<script type="text/javascript">
+							var $slider = $('.slider ul');
+							var $slider_child_l = $('.slider ul li').length;
+							var $slider_width = $('.slider ul li').width();
+							$slider.width($slider_child_l * $slider_width);
+							var slider_count = 0;
+							if ($slider_child_l < 6) {
+								$('#btn-right').css({cursor: 'auto'});
+								$('#btn-right').removeClass("dasabled");
+							}
+							$('#btn-right').click(function() {
+								if ($slider_child_l < 6 || slider_count >= $slider_child_l - 6) {
+									return false;
+								}
+								slider_count++;
+								$slider.animate({left: '-=' + $slider_width + 'px'}, 'slow');
+								slider_pic();
+							});
+							$('#btn-left').click(function() {
+								if (slider_count <= 0) {
+									return false;
+								}
+								slider_count--;
+								$slider.animate({left: '+=' + $slider_width + 'px'}, 'slow');
+								slider_pic();
+							});
+							function slider_pic() {
+								if (slider_count >= $slider_child_l - 6) {
+									$('#btn-right').css({cursor: 'auto'});
+									$('#btn-right').addClass("dasabled");
+								}
+								else if (slider_count > 0 && slider_count <= $slider_child_l - 6) {
+									$('#btn-left').css({cursor: 'pointer'});
+									$('#btn-left').removeClass("dasabled");
+									$('#btn-right').css({cursor: 'pointer'});
+									$('#btn-right').removeClass("dasabled");
+								}
+								else if (slider_count <= 0) {
+									$('#btn-left').css({cursor: 'auto'});
+									$('#btn-left').addClass("dasabled");
+								}
+							}
+							$('.slider a').hover(function() {
+								if ($(this).find('img:animated').length) return;
+								$(this).animate({marginTop: '0px'}, 300);
+								$(this).find('img').animate({width: '150px'}, 300);
+							}, function() {
+								$(this).animate({marginTop: '24px'}, 200);
+								$(this).find('img').animate({width: '90px'}, 200);
+							});
+							</script>
+						</div>
+					</div>
+				</div>
+			    <div class="secondbox">
+			    	<div class="main">
+			    		<div class="title">
+			    			<h3 class="tm">实训案例</h3>
+			    			<br />
+			    			<p class="tm">
+			    				Training case
+			    			</p>
+			    		</div>
+			    		<div class="secshow">
+			    			<ul>
+			    				<li><a href="#"><img src="images/sdkj8.png"/></a>
+			    					<div class="swbg"><h3>实训一</h3></div>
+			    				</li>
+			    				<li><a href="#"><img src="images/sdkj9.png"/></a>
+			    					<div class="swbg"><h3>实训二</h3></div>
+			    				</li>
+			    				<li><a href="#"><img src="images/sdkj10.png"/></a>
+			    					<div class="swbg"><h3>实训三</h3></div>
+			    				</li>
+			    				<li><a href="#"><img src="images/sdkj11.png"/></a>
+			    					<div class="swbg"><h3>实训四</h3></div>
+			    				</li>
+			    			</ul>
+			    			<div class="downimg tm"><img src="img/sdkj12.png"/></div>
+			    		</div>
+			    	</div>
+			    </div>
+			    <div class="threebox">
+			    	<div class="main">
+			    		<div class="title mt25">
+			    			<h3 class="tm">职业规划</h3>
+			    			<br />
+			    			<p class="tm">
+			    				Career planning
+			    			</p>
+			    		</div>
+			    		<div class="threeconter">
+			    		<marquee direction="up" behavior="scroll" width="600"  height="310" scrollamount="5" vspace="10" onmouseout="this.start()" onmouseover="this.stop()">
+			    		<div class="ghlist">
+			    			<ul>
+			    				<li><a href="#"><h3>国家资助 助我成长主题演讲比赛</h3></a>
+			    					<p>国家资助 助我成长主题演讲比赛暨征文活动国家资助 助我成长主题征文活动</p>
+			    				</li>
+			    				<li>
+			    					<a href="#"><h3>国家资助 助我成长主题演讲比赛</h3></a>
+			    					<p>国家资助 助我成长主题演讲比赛暨征文活动国家资助 助我成长主题征文活动</p>
+			    				</li>
+			    				<li>
+			    					<a href="#"><h3>国家资助 助我成长主题演讲比赛</h3></a>
+			    					<p>国家资助 助我成长主题演讲比赛暨征文活动国家资助 助我成长主题征文活动</p>
+			    				</li>
+			    				
+			    				<li><a href="#"><h3>国家资助 助我成长主题演讲比赛</h3></a>
+			    					<p>国家资助 助我成长主题演讲比赛暨征文活动国家资助 助我成长主题征文活动</p>
+			    				</li>
+			    				<li>
+			    					<a href="#"><h3>国家资助 助我成长主题演讲比赛</h3></a>
+			    					<p>国家资助 助我成长主题演讲比赛暨征文活动国家资助 助我成长主题征文活动</p>
+			    				</li>
+			    				<li>
+			    					<a href="#"><h3>国家资助 助我成长主题演讲比赛</h3></a>
+			    					<p>国家资助 助我成长主题演讲比赛暨征文活动国家资助 助我成长主题征文活动</p>
+			    				</li>
+			    				<li>
+			    					<a href="#"><h3>国家资助 助我成长主题演讲比赛</h3></a>
+			    					<p>国家资助 助我成长主题演讲比赛暨征文活动国家资助 助我成长主题征文活动</p>
+			    				</li>
+			    				<li>
+			    					<a href="#"><h3>国家资助 助我成长主题演讲比赛</h3></a>
+			    					<p>国家资助 助我成长主题演讲比赛暨征文活动国家资助 助我成长主题征文活动</p>
+			    				</li>
+			    				<li>
+			    					<a href="#"><h3>国家资助 助我成长主题演讲比赛</h3></a>
+			    					<p>国家资助 助我成长主题演讲比赛暨征文活动国家资助 助我成长主题征文活动</p>
+			    				</li>
+			    			</ul>
+			    		</div>
+			    		</marquee>
+			    		<div class="zyxxbox">
+			    			<h3>热门专业</h3>
+			    			<ul>
+			    				<li><a href="#">汽车检测与维修技术-专业特色</a><span>2017-5-25</span></li>
+			    				<li><a href="#">通信技术-专业特色</a><span>2017-5-25</span></li>
+			    				<li><a href="#">城市轨道交通运营管理-专业特色</a><span>2017-5-25</span></li>
+			    				<li><a href="#">会计-专业特色</a><span>2017-5-25</span></li>
+			    				<li><a href="#">计算机应用技术（无人机方向）-专业特色</a><span>2017-5-25</span></li>
+			    				<li><a href="#">护理专业-专业特色</a><span>2017-5-25</span></li>
+			    				<li><a href="#">音乐教育（幼师方向）-专业特色</a><span>2017-5-25</span></li>
+			    			</ul>
+			    		</div>
+			    		</div>
+			    		<div class="more tm"><a href="#">查看更多</a></div>
+			    	</div>
+			    </div>
+			    <div class="fourbox">
+			    	<div class="main">
+			    		<div class="title">
+			    			<h3 class="tm">报名方式</h3>
+			    			<br />
+			    			<p class="tm">
+			    				Registration method
+			    			</p>
+			    		</div>
+			    		<div class="regist">
+			    			<ul>
+			    				<li>
+			    					<h3>报名方式1：填写报报名申请表</h3>
+			    					<div class="rgbox">
+			    						<h3 id="bai">学院预报名在线申请表</h3>
+			    						<div class="rgcton tm">
+			    						<form action="" method="get"> 
+			    						<table class="rgbg tm">
+			    						<tr><td class="rgleft">学生姓名：</td><td class="rgright"><input type="text" name="names" class="intext"  /></td></tr>
+			    						<tr><td>联系电话：</td><td><input type="text" name="phone" class="intext"  /></td></tr>
+			    						<tr><td>当前学历：</td>
+			    							<td>
+			    							
+											<label><input name="record" type="radio" value="" />初中 </label> 
+											<label><input name="record" type="radio" value="" />高中 </label> 
+											<label><input name="record" type="radio" value="" />其它 </label> 
+											
+			    						    </td>
+			    						</tr>
+			    						<tr><td>志愿一：</td>
+			    							<td>
+			    							<select name="firstzy">
+			    								<option value="">汽车检测与维修术</option>
+			    								<option value="">通信技术</option>
+			    								<option value="">城市轨道交通运营管理</option>
+			    								<option value="">护理</option>
+			    								<option value="">音乐教育（幼师方向）</option>
+			    								<option value="">电子商务</option>
+			    								<option value="">计算机应用技术（无人机方向）</option>
+			    								<option value="">机电一体化技术（机器人方向）</option>
+			    								<option value="">计算机网络（艺术设计方向）</option>
+			    								<option value="">会计</option>
+			    							</select>
+			    						    </td>
+			    						</tr>
+			    						<tr><td>志愿二：</td>
+			    							<td>
+			    							<select name="secondzy">
+			    								<option value="">汽车检测与维修术</option>
+			    								<option value="">通信技术</option>
+			    								<option value="">城市轨道交通运营管理</option>
+			    								<option value="">护理</option>
+			    								<option value="">音乐教育（幼师方向）</option>
+			    								<option value="">电子商务</option>
+			    								<option value="">计算机应用技术（无人机方向）</option>
+			    								<option value="">机电一体化技术（机器人方向）</option>
+			    								<option value="">计算机网络（艺术设计方向）</option>
+			    								<option value="">会计</option>
+			    							</select>
+			    						    </td>
+			    						</tr>
+			    					</table>
+			    					<p id="ft16">个人信息保密，12小时内回复</p>
+			    					<input type="submit" id="tijiao" value="点击提交申请表" ></input>
+			    					</form> 
+			    					</div>
+			    					</div>
+			    				</li>
+			    				<li>
+			    					<h3>报名方式2：拨打以下咨询电话报名</h3>
+			    					<div class="rgbox tm">
+			    						<h3 id="bai">请拨打以下电话与我们联系</h3>
+			    						<div class="rgcton">
+			    					    <img src="img/sdkj14.png"/>
+			    					    <p>0371-60996830</p>
+			    					    <p class="mb15">0371-60996830</p>
+			    					    <a id="zixun" href="#">点击按钮，网站咨询</a>
+			    					</div>
+			    					</div>
+			    				</li>
+			    				<li>
+			    					<h3>来校路线及乘车方式</h3>
+			    					<div class="rgbox">
+			    						<h3 id="bai">郑州时代科技中等专业学校地址</h3>
+			    						<div class="rgcton">
+			    					    <p id="ft17">河南省新郑市107国道与芦家桥交叉口西北角</p>
+			    					    <img src="img/sdkj15.png"/>
+			    					</div>	
+			    					</div>
+			    				</li>
+			    			</ul>
+			    		</div>
+			    	</div>
+			    </div>
+			    <div class="fivbox">
+			    	<div class="main">
+			    		<div class="title">
+			    			<h3 class="tm">学校承诺</h3>
+			    			<br />
+			    			<p class="tm">
+			    				School commitment
+			    			</p>
+			    		</div>
+			    		<div class="msgbox">
+			    			<p>1、学生毕业根据所学专业安排对口就业，月工资4000元以上，假期期间学校安排勤工俭学，每月工资2500-3000元。</p>
+			    			<p>2、入校签订就业协议不安排就业退还双倍学费。</p>
+			    		</div>
+			    	</div>
+			    </div>
+			</div>
+			<div class="footer">
+			    <div class="main">
+				<div class="footop tl"><img class="fl" src="img/footer_03.jpg"/>
+					<ul class="fl">
+					<li><a href="#">宏天科技</a></li>
+					<li><a href="#">中国教育部</a></li>
+					<li><a href="#">中国学信网</a></li>
+					<li><a href="#">河南省教育局</a></li>
+				    </ul>
+				    <img class="fr mt25" src="img/footer_06.jpg"/>
+				</div>
+				<div class="footbot tm">
+					<p><a href="#">网站首页</a> 丨 <a href="#">学院概况</a> 丨 <a href="#">特色专业</a> 丨 <a href="#">招生计划</a> 丨 <a href="#">报考指南</a> 丨 <a href="#">就业指导</a> 丨 <a href="#">优秀学院</a> 丨 <a href="#">报名方式</a></p>
+				    <p>地址：河南省新郑市107国道与芦家桥交叉口西北角 学校办公电话：0371-60996830</p>
+				    <p>Copyright©All Rights Reserved. 技术支持：<a href="#">宏天科技</a></p>
+				</div>
+			</div>
+		</div>
+		</div>
+	</body>
+</html>
