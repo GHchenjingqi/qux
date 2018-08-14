@@ -1,0 +1,206 @@
+@charset "utf-8";
+/** reset css **/
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td { margin: 0; padding: 0; }
+audio,canvas,video{display:inline-block;*display:inline;*zoom:1}
+fieldset, img { border: 0; }
+address, caption, cite, code, dfn, em, strong, th, var, optgroup { font-style: inherit; }
+ol,ul,li{list-style:none}
+caption, th { text-align: left; }
+input, button, textarea, select, optgroup, option { font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; }
+input, button, textarea, select { *font-size:100%;}
+body, button, input, select, textarea { font:12px/1.5 \5FAE\8F6F\96C5\9ED1,"\5B8B\4F53";color:#424242;word-break:break-all;}
+:focus { outline: 0; }
+.left { float: left; }
+.right { float: right; }
+.clear { clear: both; }
+.overflow{ overflow:hidden;}
+.clearfix { display: inline; zoom: 1; }
+a{ text-decoration: none; margin: 0; padding: 0; }
+a:hover img{filter:alpha(opacity=80); -moz-opacity:0.80;  opacity:0.80;}
+.clearfix:after { display: block; overflow: hidden; clear: both; height: 0; visibility: hidden; content: "."; }
+html { _filter:expression(document.execCommand("BackgroundImageCache", false, true));}
+ins { text-decoration: none; }
+del { text-decoration: line-through; }
+em { font-style: normal; }
+th{text-align:inherit}
+iframe{display:block}
+*{ margin: 0px; padding: 0px; list-style: none; }
+q:before,q:after{content:''}
+.hide{display:none;}
+.show{display:block;}
+.hand{cursor:pointer;}
+/*reset end*/.bg01 {
+	background-image: url(../images/yuemuUI-01.png);
+	background-repeat: no-repeat;
+	background-position: 0px;
+	height: 720px;
+	width: 1280px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: -999;
+}
+.logo {
+	float: left;
+	position: absolute;
+	left: 110px;
+	top: 0px;
+}
+html, body { width:1280px; height:720px; overflow:hidden; }
+body {
+}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,a,p,blockquote,th,td,address { margin:0px; padding:0px; border:0px; font-family:"Heiti SC","微软雅黑"; font-size: 24px; font-weight:normal; color:#fff; -webkit-text-size-adjust:none;}
+*{margin:0px; padding:0px;}
+a { text-decoration:none; color:#cccedf; }
+a:hover { text-decoration:none; color:#e9ebf5; }
+input, button { background-color:transparent; color:#cccedf; }
+button { cursor:hand; }
+ul, li { list-style:none; }
+
+#tips, #tips2{ display:block; width:1120px; height:70px; line-height:35px; vertical-align:middle; position:absolute; left:80px; top:648px; text-align:center; font-size:22px; color:#707d9d; }
+#tips img, #tips2 img{ display:inline-block; width:auto; height:35px; line-height:35px; vertical-align:middle; margin:-2px 4px 0px 1.5em;}
+#tips img:first-child, #tips2 img:first-child{ margin-left:0px;}
+/**/
+#titlePic{ display:block; width:500px; height:115px; position:absolute; left:0px; top:0px;}
+#dateTime{
+	display:block;
+	width:300px;
+	height:52px;
+	overflow:hidden;
+	position:absolute;
+	left:1040px;
+	top: 20px;
+}
+.date, .time{ display:block; width:100%; height:17px; line-height:17px; font-size:17px; color:#98b3f0; text-align:left; margin-left:4px;}
+.time{ height:36px; line-height:36px; font-size:36px; color:#FFFFFF; margin:0px;}
+.first, .second, .third{ display:inline-block; width:38px; height:36px; line-height:36px; overflow:hidden; text-align:center;}
+.second{ width:10px; margin:0px 0px 0px -2px; line-height:27px; vertical-align:top;}
+
+.fstHolder{
+	display:block;
+	width:980px;
+	height:50px;
+	overflow:hidden;
+	position:relative;
+	margin:142px 0px 0px 83px;
+}
+.fstHolder ul{ display:block; width:auto; height:50px; float:left; position:absolute; z-index:4;}
+.fstHolder ul li{ display:block; width:170px; height:50px; line-height:50px; text-align:center; float:left; color:#98b3f0;}
+.fstHolder ul li.sel{color:#FFFFFF;}
+
+.sndHolder{
+	overflow:hidden;
+	margin-top: 24px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 70px;
+}
+.sndHolder ul{
+	overflow:hidden;
+	position:absolute;
+	z-index:3;
+} 
+.sndHolder ul li{
+	line-height:50px;
+	font-size:22px;
+	color:#98b3f0;
+}
+.sndHolder ul li.sel{ color:#FFFFFF;}
+.sndHolder ul li:last-child{ background:none;}
+#fstSel { display:block; width:160px; height:50px; position:absolute; z-index:2; left:5px; top:0px;}
+#sndSel{ width:170px; height:48px; z-index:1; left:0px; top:1px;}
+
+.con{ display:block; width:970px; height:410px; overflow:hidden; position:absolute; left:240px; top:196px; border-radius:0px 0px 10px 0px;}
+#bigImg{ display:block; width:auto; max-width:900px; height:410px; float:left; margin-right:8px; border:0px solid transparent;}
+#bigImg.onlyImg{ width:970px !important; max-width:970px;}
+#tr{ left:1196px; background-position:-14px 0px;}
+#bl{ width:24px; height:14px; left:143px; top:200px; background-position:0px -24px;}
+#br{ width:24px; height:14px; left:143px; top:588px; background-position:0px -38px;}
+
+
+
+.date, .time{
+	display:block;
+	width:100%;
+	height:17px;
+	line-height:17px;
+	font-size:17px;
+	color:#98b3f0;
+	text-align:left;
+	margin-left:4px;
+	z-index: 10;
+	float: left;
+}
+.time{
+	height:36px;
+	line-height:36px;
+	font-size:36px;
+	color:#FFFFFF;
+	margin:0px;
+	z-index: 555;
+}
+.first, .second, .third{
+	display:inline-block;
+	width:50px;
+	height:36px;
+	line-height:36px;
+	overflow:hidden;
+	text-align:center;
+	float: left;
+	z-index: 555;
+}
+.second{
+	width:10px;
+	margin:0px 0px 0px -2px;
+	line-height:27px;
+	vertical-align:top;
+	z-index: 555;
+}
+.welcome {
+	position: absolute;
+	z-index: 2;
+	left: 110px;
+	top: 655px;
+}
+.welcome p {
+	font-size: 26px;
+	font-weight: bold;
+	color: #99FFFF;
+	padding-top: 3px;
+}
+
+.fstHolder{
+	display:block;
+	width:360px;
+	height:60px;
+	overflow:hidden;
+	position:absolute;
+	z-index: 9999;
+	left: 800px;
+	top: 510px;
+	margin-top: 142px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 83px;
+}
+.fstHolder ul{ display:block; width:auto; height:50px; float:left; position:absolute; z-index:4;}
+.fstHolder ul li{
+	display:block;
+	width:120px;
+	height:50px;
+	line-height:50px;
+	text-align:center;
+	float:left;
+	color:#98b3f0;
+	margin-left: 5px;
+}
+.fstHolder ul li.sel{color:#FFFFFF;}
+#fstSel, #sndSel{
+	display:block;
+	width:120px;
+	height:50px;
+	position:absolute;
+	z-index:2;
+	left:5px;
+	top:0px;
+}

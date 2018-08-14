@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="pragma" content="no-cache"> 
+<meta http-equiv="cache-control" content="no-cache"> 
+<meta http-equiv="expires" content="0"> 
+
+
+<title>无标题文档</title>
+<style type="text/css">
+@import url("css/global2.css");
+
+#item{
+	padding-left:110px;
+}
+#item ul{
+	height:370px;
+	visibility:hidden;
+	padding: 0px;
+}
+#item li.sel{filter: progid:DXImageTransform.Microsoft.Alpha(opacity=90); opacity:0.9; background:#A90002;}
+
+#item ul:first-child{ background:url(images/yuemuUI-04_03.png) no-repeat;}
+#item ul:nth-child(2){ background:url(images/yuemuUI-04_05.png) no-repeat;}
+#item ul:nth-child(3){ background:url(images/yuemuUI-04_07.png) no-repeat;}
+#item ul:nth-child(4){ background:url(images/yuemuUI-04_09.png) no-repeat;}
+#item ul:nth-child(5){ background:url(images/yuemuUI-04_11.png) no-repeat;}
+
+</style>
+</head>
+
+<body>
+<div class="logo"><img src="images/yuemuUI-01_02.png"></div>
+<div id="item">
+		<ul>
+				<li><p fakeHref="http://www.fir.im/">少林寺风采</p></li>
+				
+		</ul>
+		<ul>
+				<li><p fakeHref="page4.html">旅行团</p></li>
+				<li><p fakeHref="page5.html">旅行团</p></li>
+				<li><p fakeHref="page6.html">旅行团</p></li>
+				<li><p fakeHref="page5.html">旅行团</p></li>
+				<li><p fakeHref="page6.html">旅行团</p></li>
+		</ul>
+		<ul>
+				<li><p fakeHref="page7.html">旅行团</p></li>
+				<li><p fakeHref="page8.html">旅行团</p></li>
+				<li><p fakeHref="page9.html">旅行团</p></li>
+				<li><p fakeHref="page5.html">旅行团</p></li>
+				<li><p fakeHref="page6.html">旅行团</p></li>
+				<li><p fakeHref="page5.html">旅行团</p></li>
+				<li><p fakeHref="page6.html">旅行团</p></li>
+		</ul>
+		<ul>
+				<li><p fakeHref="page10.html">旅行团</p></li>
+				<li><p fakeHref="page11.html">旅行团</p></li>
+				<li><p fakeHref="page12.html">旅行团</p></li>
+				<li><p fakeHref="page5.html">旅行团</p></li>
+		</ul>
+        	<ul>
+				<li><p fakeHref="page10.html">旅行团</p></li>
+				<li><p fakeHref="page11.html">旅行团</p></li>
+				<li><p fakeHref="page12.html">旅行团</p></li>
+				<li><p fakeHref="page5.html">旅行团</p></li>
+		</ul>
+</div>
+<script type="text/javascript">
+var tar, fstId = 0, sndId = 0, fstTotal = 0, sndTotal = 0, last1, last2;
+function init(){
+	tar = $$('item');
+	fstTotal = tar.children.length;
+	move1();//自动选中第一个
+}
+window.addEventListener('load', init, false);
+window.addEventListener('keydown', kc, false);
+function kc(){
+	switch(event.keyCode){
+		case 38://上
+			sndId --;
+			if(sndId < 0){
+				sndId = sndTotal - 1;
+			}
+			move2();
+			return false;
+			break;
+		case 40://下
+			sndId ++;
+			if(sndId >= sndTotal){
+				sndId = 0;
+			}
+			move2();
+			return false;
+			break;
+		case 37://左
+			fstId --;
+			if(fstId < 0){
+				fstId = fstTotal - 1;
+			}
+			move1();
+			return false;
+			break;
+		case 39://右
+			fstId ++;
+			if(fstId >= fstTotal){
+				fstId = 0;
+			}
+			move1();
+			return false;
+			break;
+		case 13:
+			window.location.href = last2.children[0].getAttribute('fakeHref');
+			return false;
+			break;
+		case 114://屏蔽上下页
+		case 115:
+			return false;
+			break;
+		case 27:
+			
+			return false;
+			break;
+	}
+}
+function move1(){
+	sndId = 0;
+	sndTotal = tar.children[fstId].children.length;
+	if(last1){
+		last1.style.visibility = 'hidden';
+	}
+	last1 = tar.children[fstId];
+	last1.style.visibility = 'visible';
+	move2();
+}
+function move2(){
+	if(last2){
+		last2.className = '';
+	}
+	last2 = tar.children[fstId].children[sndId];
+	last2.className = 'sel';
+}
+function $$(id){return document.getElementById(id)};
+
+</script>
+</body>
+</html>

@@ -1,0 +1,388 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="gb2312">
+<meta http-equiv="pragma" content="no-cache"> 
+<meta http-equiv="cache-control" content="no-cache"> 
+<meta http-equiv="expires" content="0"> 
+
+
+<title>周边转转</title>
+<style>
+html, body { width:1280px; height:720px; overflow:hidden; }
+body {
+	background-image: url(images/yuemuUI-03.jpg);
+	background-repeat: no-repeat;
+	height: 720px;
+	width: 1280px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,a,p,blockquote,th,td,address { margin:0px; padding:0px; border:0px; font-family:"Heiti SC","微软雅黑"; font-size: 24px; font-weight:normal; color:#fff; -webkit-text-size-adjust:none;}
+*{margin:0px; padding:0px;}
+a { text-decoration:none; color:#cccedf; }
+a:hover { text-decoration:none; color:#e9ebf5; }
+input, button { background-color:transparent; color:#cccedf; }
+button { cursor:hand; }
+ul, li { list-style:none; }
+
+#tips, #tips2{ display:block; width:1120px; height:70px; line-height:35px; vertical-align:middle; position:absolute; left:80px; top:648px; text-align:center; font-size:22px; color:#707d9d; }
+#tips img, #tips2 img{ display:inline-block; width:auto; height:35px; line-height:35px; vertical-align:middle; margin:-2px 4px 0px 1.5em;}
+#tips img:first-child, #tips2 img:first-child{ margin-left:0px;}
+/**/
+#titlePic{ display:block; width:500px; height:115px; position:absolute; left:0px; top:0px;}
+#welcome{ display:block; width:540px; height:30px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; position:absolute; left:542px; top:81px; text-align:right; font-size:22px;}
+#welcome span{ color:#f6cf12; margin-left:5px;}
+
+#dateTime{
+	display:block;
+	width:90px;
+	height:52px;
+	overflow:hidden;
+	position:absolute;
+	left:1080px;
+	top:20px;
+}
+.date, .time{ display:block; width:100%; height:17px; line-height:17px; font-size:17px; color:#98b3f0; text-align:left; margin-left:4px;}
+.time{ height:36px; line-height:36px; font-size:36px; color:#FFFFFF; margin:0px;}
+.first, .second, .third{
+	display:inline-block;
+	width:41px;
+	height:36px;
+	line-height:36px;
+	overflow:hidden;
+	text-align:center;
+}
+.second{ width:10px; margin:0px 0px 0px -2px; line-height:27px; vertical-align:top;}
+
+#sel{
+	display:block;
+	width:202px;
+	height:350px;
+	position:absolute;
+	background-repeat: no-repeat;
+	left: 340px;
+	top: 184px;
+}
+
+#fHolder{ display:none; width:1280px; height:720px; background:url(images/1mFloatBg.jpg) no-repeat; position:absolute; left:0px; top:0px; z-index:3;}
+#float{ display:block; width:270px; height:auto; position:absolute; left:505px; top:113px; z-index:5;}
+#float dd{ display:block; width:270px; height:75px; line-height:75px; vertical-align:middle; color:#98b3f0; font-size:30px; text-align:left; background:url(images/1mFloatLine.jpg) no-repeat;}
+#float dd span{ display:block; width:92px; height:75px; overflow:hidden; float:left; background:url(images/1mFloatIcon.png) no-repeat 45px 0px;}
+#float dd:first-child{ background:none;}
+#float dd:nth-child(2) span{ background-position:45px -75px;}
+#float dd:nth-child(3) span{ background-position:45px -150px;}
+#float dd:nth-child(4) span{ background-position:45px -225px;}
+#float dd:nth-child(5) span{ background-position:45px -300px;}
+#float dd:nth-child(6) span{ background-position:45px -375px;}
+
+#float dd.sel{color:#FFFFFF;}
+#float dd.sel:nth-child(1) span{ background-position:45px -450px;}
+#float dd.sel:nth-child(2) span{ background-position:45px -525px;}
+#float dd.sel:nth-child(3) span{ background-position:45px -600px;}
+#float dd.sel:nth-child(4) span{ background-position:45px -675px;}
+#float dd.sel:nth-child(5) span{ background-position:45px -750px;}
+#float dd.sel:nth-child(6) span{ background-position:45px -825px;}
+
+#fSel{ display:block; width:270px; height:73px; margin-top:2px; position:absolute; left:505px; top:-113px; z-index:4;}
+
+
+</style>
+</head>
+<body>
+<div class="logo"><img src="images/yuemuUI-03_01.png"></div>
+<div id="dateTime">
+		<p class="date"></p>
+		<p class="time"></p>
+</div>
+<div id="sel"></div>
+
+<script src="script/jquery.js" type="text/javascript"></script>
+<script src="script/date-zh-CN.js" type="text/javascript"></script>
+<script type="text/javascript">
+jQuery.fx.interval = 40;
+//------------------------------
+var wel, timer, sel, fstId = 0, total = 5, locked = false, fid = -1, str = '',getName, fHolder, float, fs, lastF, ua = navigator.userAgent, userNameError = 0,isBack = false;
+var itemData = new Array(
+	'https://www.baidu.com/',//更多周边
+	'shaolinshi4.html',//少林寺
+	'https://www.baidu.com/',//云台山
+	'https://www.baidu.com/',//龙门石窟
+	'https://www.baidu.com/'//清明上河园
+);
+function init(){
+		if(getParam("id") != null && getParam("id") != ''){
+			fstId = parseInt(getParam("id"));
+			if(fstId < 0){
+				fstId = 0;
+			}else if(fstId > total -1){
+				fstId = total - 1;
+			}
+			isBack = true;
+		}
+		var tmp = $.cookie('fstid');
+		if(tmp != null){
+			fstId = parseInt(tmp);
+			isBack = true;
+		}
+		tmp = $.cookie('fid');
+		if(tmp != null){
+			fid = parseInt(tmp);
+		}
+		wel = $$('welcome');
+		timer = $$('dateTime');
+		sel = $$('sel');
+		fHolder = $$('fHolder');
+		float = $$('float');
+		fs = $$('fSel');
+		st = ServerTimer(timer);
+		window.setTimeout(function(){
+			sel.style.backgroundImage = 'url(images/yuemuUI-03_03.png)';//放init里才设置是为了先把背景图和内容显示出来
+			doSel(fstId);
+			getName();
+			if(fid > -1 && typeof(itemData[fstId]) == 'object'){
+				str = '';
+				for(i = 0; i < itemData[fstId].length; i++){
+					str += '<dd><span></span>'+itemData[fstId][i].name+'</dd>';
+				}
+				float.innerHTML = str;
+				fHolder.style.display = 'block';
+				moveFS();
+			}
+		}, 100);
+}
+window.addEventListener('load', init, false);
+window.addEventListener('unload', function(){
+	$.cookie('fstid', fstId);
+	$.cookie('fid', fid);
+}, false);
+window.setTimeout(function(){
+	if(typeof(VCOM_extra) == 'function'){
+		window.onkeypress = kc;	
+	}else{
+		window.addEventListener('keydown', kc, false);
+	}
+}, 200);
+function kc(){
+	if(locked && event.keyCode != 27){
+		return false;
+	}
+	switch(event.keyCode){
+		case 38://上下
+			if(fid >= 0){//弹出层打开
+				if(fid > 0){
+					fid --;
+					moveFS();
+				}else if(fid != -1){
+					fid = itemData[fstId].length - 1;
+					moveFS();
+				}
+			}
+			return false;
+			break;
+		case 40:
+			if(fid >= 0){//弹出层打开
+				if(fid < itemData[fstId].length -1){
+					fid ++;
+					moveFS();
+				}else if(fid != -1){
+					fid = 0;
+					moveFS();
+				}
+			}
+			return false;
+			break;
+		case 37://左
+			if(fid < 0){//弹出层没打开
+				if(fstId > 0){
+					fstId --;
+					doSel(fstId);
+				}
+			}
+			return false;
+			break;
+		case 39://右
+			if(fid < 0){//弹出层没打开
+				if(fstId < total -1){
+					fstId ++;
+					doSel(fstId);
+				}
+			}
+			return false;
+			break;
+		case 13:
+			if(fid < 0){//弹出层没打开
+				if(fstId < itemData.length){
+					if(typeof(itemData[fstId]) == 'object'){//打开弹出层
+						fid = 0;
+						str = '';
+						for(i = 0; i < itemData[fstId].length; i++){
+							str += '<dd><span></span>'+itemData[fstId][i].name+'</dd>';
+						}
+						float.innerHTML = str;
+						fHolder.style.display = 'block';
+						moveFS();
+					}else{
+						window.location.href = itemData[fstId];
+						
+					}
+				}
+			}else{//弹出层打开了
+				if(itemData[fstId][fid].runApp == undefined){
+						window.location.href = itemData[fstId][fid].url;
+				}else{
+					try{
+						var myApp = new VCOM_extra();
+						myApp.runLocalApp(itemData[fstId][fid].runApp);
+					}catch(e){
+					}
+				}
+			}
+			break;
+		case 114://屏蔽上下页
+		case 115:
+			return false;
+			break;
+		case 27:
+			if(fid >= 0){//弹出层打开
+				fid = -1;
+				fHolder.style.display = 'none';
+			}else{
+				window.location.href = 'index.html';
+			}
+			return false;
+			break;
+	}
+}
+function moveFS(){
+	if(lastF){
+		lastF.className = '';
+	}
+	lastF = float.children[fid];
+	lastF.className = 'sel';
+	if(isBack){
+		$(fs).animate({top:75*fid+80+'px'}, 0);
+		isBack = false;
+	}else{
+		$(fs).animate({top:75*fid+80+'px'}, 10);
+	}
+}
+//-------------------------
+function ServerTimer(obj){// ServerTimer v1.0 2012/4/5 Theal
+	//因aJax和程序执行耗费时间,所以时间并不十分准确,误差大约在500毫秒以下
+	var ST = new Object();
+	ST.strDate = '', ST.strTime = '';
+	ST.xmlHttp = false; //获取服务器时间
+	try {
+		ST.xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+	} catch(e) {
+		try {
+			ST.xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+		} catch(e2) {
+			ST.xmlHttp = false;
+		}
+	}
+	if (!ST.xmlHttp && typeof XMLHttpRequest != 'undefined') {
+		ST.xmlHttp = new XMLHttpRequest();
+	}
+	ST.xmlHttp.open("GET", "/", false);
+	ST.xmlHttp.setRequestHeader("Range", "bytes=-1");
+	try{
+	ST.xmlHttp.send(null);
+	}catch(e){}
+	ST.severtime = new Date(ST.xmlHttp.getResponseHeader("Date"));
+	ST.year = ST.severtime.getUTCFullYear();
+	ST.month = ST.severtime.getUTCMonth();
+	ST.date = ST.severtime.getUTCDate();
+	ST.hour = ST.severtime.getUTCHours() + 8;//因为中国是GMT+8时区
+	//alert(ST.severtime.getTimezoneOffset()/60);
+	ST.minu = ST.severtime.getUTCMinutes();
+	ST.seco = ST.severtime.getUTCSeconds();
+	
+	ST.initDate = function(){
+		ST.today = Date.today().set({ year:ST.year, month:ST.month, day: ST.date });//, hour: ST.hour, minute: ST.minu, second: ST.seco
+		if(ST.hour > 23){//+8后要检查现在是否过了一天
+			ST.hour = ST.hour - 24;
+			ST.today.add({ days: 1 });
+		}
+		ST.strDate = ST.today.toString('yyyy-MM-dd');
+		ST.loopTimer();//虽然这样会快1秒 不过服务器延迟往往不止1秒
+		ST.timer = window.setInterval(ST.loopTimer, 1000);
+	}
+	ST.checkDecade = function(num){
+		if(num < 10){
+			return '0'+num;
+		}else{
+			return num;
+		}
+	}
+	ST.loopTimer = function(){
+		ST.seco ++;
+		if(ST.seco > 60){
+			ST.seco = 0;
+			ST.minu ++;
+			if(ST.minu > 60){
+				ST.minu = 0;
+				ST.hour ++;
+				if(ST.hour > 23){
+					ST.hour = 0;
+					ST.today.add({ days: 1 });
+					ST.strDate = ST.today.toString('yyyy-MM-dd');
+				}
+			}
+		}
+		//ST.strTime = ST.checkDecade(ST.hour)+':'+ST.checkDecade(ST.minu)+':'+ST.checkDecade(ST.seco);
+		ST.strTime = '<span class="first">'+ST.checkDecade(ST.hour)+'</span><span class="second">'+(ST.seco%2 == 0?':':'&nbsp;')+'</span><span class="third">'+ST.checkDecade(ST.minu)+'</span>';
+		obj.innerHTML = '<p class="date">&nbsp;</p><p class="time">'+ ST.strTime + '</p>';// + ST.today.getDayName();
+	}
+	ST.initDate();
+	return ST;
+}
+function getParam(arg) {
+	var uri = window.location.href;
+	uri = uri.substr(uri.indexOf("?"), uri.length - uri.indexOf("?") + 1);
+	var re = new RegExp("" + arg + "\=([^\&\?]*)", "ig");
+	return ((uri.match(re)) ? (uri.match(re)[0].substr(arg.length + 1)) : null);
+}
+function $$(id){return document.getElementById(id)};
+function unlock(){
+	window.clearTimeout(unlockTimeout);
+	unlockTimeout = window.setTimeout(function(){
+		locked = false;
+	}, timeOut);
+}
+function doSel(id){
+	if(id < total && id > -1){
+		//sel.style.backgroundPosition = id * -278+'px 0px';
+		if(isBack){
+			$(sel).animate({backgroundPosition: id * -215}, 0, function(){$(sel).animate({left: id * 215 + 110}, 0);});
+			isBack = false;
+		}else{
+			$(sel).animate({backgroundPosition: id * -215}, 0, function(){$(sel).animate({left: id * 215 + 110}, 0);});
+		}
+		//sel.style.left = id * 210 + 81+'px';
+		
+	}
+}
+/*function getName(){
+		$.ajax({url: 'userName.html?userId=xxx', type: 'GET', timeout: 3000, async:true, cache:false, contentType:'application/x-www-form-urlencoded',dataType:'html',
+			error: function(XMLHttpRequest, textStatus, errorThrown){
+				if(userNameError < 2){
+					userNameError++;
+					getName();
+				}else{
+					userNameError = 0;
+					wel.innerHTML = '欢迎您下榻本酒店';
+				}
+		},
+			success: function(data, textStatus){
+					userNameError = 0;
+					wel.innerHTML = '欢迎<span>'+data.split('|')[0]+'</span>下榻本酒店';
+	
+		}
+	});
+}*/
+</script>
+</body>
+</html>

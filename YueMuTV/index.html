@@ -1,0 +1,262 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>悦目首页</title>
+<link href='http://fonts.googleapis.com/css?family=Exo+2:400' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Exo+2:600' rel='stylesheet' type='text/css'>
+<link type="text/css" href="css/style.css" rel="stylesheet" />
+<!--主要样式-->
+<link type="text/css" href="css/full_screen_background_slider.css" rel="stylesheet" />
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]-->
+<script type="text/javascript" src="js/jquery.min.js"></script> 
+<script type="text/javascript" src="js/modernizr.custom.js"></script>
+<script src="script/jquery.js" type="text/javascript"></script>
+<script src="script/date-zh-CN.js" type="text/javascript"></script>																									
+<script type="text/javascript" src="js/fsbs.min.js"></script>
+<script type='text/javascript'>
+$(document).ready(function(){
+	if(!Modernizr.csstransitions){
+		$("#content").delay().animate({right:"-10px", opacity: "1.0"},3000,"easeInOutQuad");
+	}
+	$('.fsb-slider').fsbslider({"animation_time":30,"animation_type":"slidelefttoright","pattern":false});
+	$(".animation_selector").click(function(){
+		$('.fsb-slider').fsbslider('destroy');
+		$('.fsb-slider').fsbslider({"animation_time":50,"animation_type":$(this).attr("data-value"),"pattern":false});
+	});
+	$(".pattern_selector").click(function(){
+		$('.fsb-slider').fsbslider('updatepattern',{pattern:$(this).attr("data-value")});
+	});
+});																							
+</script>
+
+</head>
+<body>
+<audio loop="loop" src="one.mp3" autoplay ></audio>
+<div class="logo"><img src="images/yuemuUI-01_02.png" /></div>
+<ul class="fsb-slider">
+	<li><span><img src="images/1.jpg">></span></li>
+  <li><span><img src="images/2.jpg"></span></li>
+  <li><span><img src="images/4.jpg"></span></li>
+  <li><span><img src="images/3.jpg"></span></li>
+</ul>
+
+<div class="fstHolder">
+		<ul id="fst"></ul>
+		<img id="fstSel" src="images/xuanzhong1_03.png">
+</div>
+<div class="sndHolder">
+		<ul id="snd"></ul>
+</div>
+<div id="dateTime">
+		<p class="date"></p>
+		<p class="time"></p>
+</div>
+<div class="welcome">欢迎刘先生下榻悦目大酒店</div>
+<script type="text/javascript">
+jQuery.fx.interval = 40;
+
+timer = $$('dateTime');
+	st = ServerTimer(timer);
+
+var data = new Array(//使用imgWidth可以强制拉伸图片宽度，从而设置右边的文字区域宽度。用于特定数量文字但不确定图片该做多宽用！其他情况下尽量不要用它，以免图片被拉伸造成模糊和锯齿，并且影响盒子性能。
+		['确定'
+		], ['OK'
+		]);
+
+var locked = false, timer, st, str='', num = 0, fstId = 0, fstTotal = 0, fstWidth = 0, sndId = 0, sndTotal = 0, fst, snd, fs, ss, tl, tr, bl, br, lastFst, lastSnd, bigImg, conTxt, fstTO, sndTO, timeOut1 = 500, timeOut2 = 1000, fstOffset = 0, fstPage = 0, sndOffset = 0, sndPage = 0, firstTime = true;
+function init(){
+	fst = $$('fst');
+	fstWidth = fst.parentNode.offsetWidth;
+	snd = $$('snd');
+	sndHeight = snd.parentNode.offsetHeight;
+	fs = $$('fstSel');
+	ss = $$('sndSel');
+	
+	var tmp = $.cookie('introfstid');
+	if(tmp != null){
+		fstId = parseInt(tmp);
+	}
+	tmp = $.cookie('introsndid');
+	if(tmp != null){
+		sndId = parseInt(tmp);
+	}
+	
+	if(getParam("fstid") != null && getParam("fstid") != ''){
+		fstId = parseInt(getParam("fstid"));
+		if(fstId < 0){
+			fstId = 0;
+		}
+	}
+	if(getParam("sndid") != null && getParam("sndid") != ''){
+		sndId = parseInt(getParam("sndid"));
+		if(sndId < 0){
+			sndId = 0;
+		}
+	}
+	fill1();
+	
+	
+}
+function fill1(){
+	str = '';
+	fstTotal = data.length;
+	if(fstId >= fstTotal){
+		fstId = 0;
+	}
+	for(i = 0; i < fstTotal; i++){
+		str += '<li>'+data[i][0]+'</li>';
+	}
+	fst.style.width = 170*fstTotal+'px';
+	fst.innerHTML = str;
+	move1();
+}
+function move1(){
+	if(lastFst){
+		lastFst.className = '';
+	}
+	lastFst = fst.children[fstId];/*将fst的子项给lastfst*/
+	lastFst.className = 'sel';/*将SEL样式里的颜色给选中的fstid*/
+	num = fstId * 170 + 5;//tar
+	if(num+170 > fstWidth + fstOffset){//需要翻页了
+		fstPage = Math.ceil(num/1020) - 1;
+		fstOffset = 0 - fstPage * 1020;
+		$(fst).animate({left:fstOffset}, 200);
+	}
+	
+	$(fs).animate({'left': fstId * 120 + 5 + fstOffset}, 200);
+	
+}
+
+window.addEventListener('load', init, false);
+window.addEventListener('unload', function(){
+	$.cookie('introfstid', fstId);
+	$.cookie('introsndid', sndId);
+}, false);
+if(typeof(VCOM_extra) == 'function'){
+	window.onkeypress = kc;	
+}else{
+	window.addEventListener('keydown', kc, false);
+}
+function kc(){
+	if(locked && event.keyCode != 27){
+		return false;
+	}
+	switch(event.keyCode){
+		case 37://左
+			fstId --;
+			if(fstId < 0){
+				fstId = fstTotal - 1;
+			}
+			move1();
+			return false;
+			break;
+		case 39://右
+			fstId ++;
+			if(fstId >= fstTotal){
+				fstId = 0;
+			}
+			move1();
+			return false;
+			break;
+		case 13://
+		window.location.href="fenlei.html";
+		return false;
+		break;
+		
+			
+			break;
+		case 114://屏蔽上下页
+		case 115:
+			return false;
+			break;
+		case 27:
+			//window.location.href = '';
+			window.history.go(-1);
+			return false;
+			break;
+	}
+}
+function getParam(arg) {
+	var uri = window.location.href;
+	uri = uri.substr(uri.indexOf("?"), uri.length - uri.indexOf("?") + 1);
+	var re = new RegExp("" + arg + "\=([^\&\?]*)", "ig");
+	return ((uri.match(re)) ? (uri.match(re)[0].substr(arg.length + 1)) : null);
+}
+function $$(id){return document.getElementById(id)};
+//-------------------------
+function ServerTimer(obj){// ServerTimer v1.0 2012/4/5 Theal
+	//因aJax和程序执行耗费时间,所以时间并不十分准确,误差大约在500毫秒以下
+	var ST = new Object();
+	ST.strDate = '', ST.strTime = '';
+	ST.xmlHttp = false; //获取服务器时间
+	try {
+		ST.xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+	} catch(e) {
+		try {
+			ST.xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+		} catch(e2) {
+			ST.xmlHttp = false;
+		}
+	}
+	if (!ST.xmlHttp && typeof XMLHttpRequest != 'undefined') {
+		ST.xmlHttp = new XMLHttpRequest();
+	}
+	ST.xmlHttp.open("GET", "/", false);
+	ST.xmlHttp.setRequestHeader("Range", "bytes=-1");
+	try{
+	ST.xmlHttp.send(null);
+	}catch(e){}
+	ST.severtime = new Date(ST.xmlHttp.getResponseHeader("Date"));
+	ST.year = ST.severtime.getUTCFullYear();
+	ST.month = ST.severtime.getUTCMonth();
+	ST.date = ST.severtime.getUTCDate();
+	ST.hour = ST.severtime.getUTCHours() + 8;//因为中国是GMT+8时区
+	//alert(ST.severtime.getTimezoneOffset()/60);
+	ST.minu = ST.severtime.getUTCMinutes();
+	ST.seco = ST.severtime.getUTCSeconds();
+	
+	ST.initDate = function(){
+		ST.today = Date.today().set({ year:ST.year, month:ST.month, day: ST.date });//, hour: ST.hour, minute: ST.minu, second: ST.seco
+		if(ST.hour > 23){//+8后要检查现在是否过了一天
+			ST.hour = ST.hour - 24;
+			ST.today.add({ days: 1 });
+		}
+		ST.strDate = ST.today.toString('yyyy-MM-dd');
+		ST.loopTimer();//虽然这样会快1秒 不过服务器延迟往往不止1秒
+		ST.timer = window.setInterval(ST.loopTimer, 1000);
+	}
+	ST.checkDecade = function(num){
+		if(num < 10){
+			return '0'+num;
+		}else{
+			return num;
+		}
+	}
+	ST.loopTimer = function(){
+		ST.seco ++;
+		if(ST.seco > 59){
+			ST.seco = 0;
+			ST.minu ++;
+			if(ST.minu > 59){
+				ST.minu = 0;
+				ST.hour ++;
+				if(ST.hour > 23){
+					ST.hour = 0;
+					ST.today.add({ days: 1 });
+					ST.strDate = ST.today.toString('yyyy-MM-dd');
+				}
+			}
+		}
+		//ST.strTime = ST.checkDecade(ST.hour)+':'+ST.checkDecade(ST.minu)+':'+ST.checkDecade(ST.seco);
+		ST.strTime = '<span class="first">'+ST.checkDecade(ST.hour)+'</span><span class="second">'+(ST.seco%2 == 0?':':'&nbsp;')+'</span><span class="third">'+ST.checkDecade(ST.minu)+'</span>';
+		obj.innerHTML = '<p class="date">&nbsp;</p><p class="time">'+ ST.strTime + '</p>';// + ST.today.getDayName();
+	}
+	ST.initDate();
+	return ST;
+}
+</script>
+</body>
+</html>

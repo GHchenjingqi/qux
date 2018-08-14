@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>悦目新版首页</title>
+</head>
+<style>
+*, html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, label, fieldset, input, p, blockquote, th, td { margin:0; padding:0 }
+table { border-collapse:collapse; border-spacing:0 }
+fieldset, img { border:0 }
+address, caption, cite, code, dfn, em, strong, th, var { font-style:normal; font-weight:normal }
+ol, ul, li { list-style:none }
+caption, th { text-align:left }
+h1, h2, h3, h4, h5, h6 { font-size:100%; font-weight:normal }
+q:before, q:after { content:'' }
+strong { font-weight:bold }
+em { font-style:italic }
+a img { border:none }
+body{ width:1280px; height:720px; background:url(img/hyybg.jpg) no-repeat; position:fixed; top:0px; left:0px; right:0px; bottom:0px; overflow:hidden;}
+.topbox{ width:1280px; height:102px; overflow:hidden; margin-bottom:50px }
+.logobox{ width:360px; height:102px; float:left; position:absolute;top:0px; left:38px;}
+#timebox{position:absolute;top:35px;left:900px;color: #FFFFFF;font-family:"微软雅黑";font-size: 22px;z-index:666}
+#weather{position:absolute;top:35px;left:680px;color: #FFFFFF;font-family:"微软雅黑";font-size: 22px;z-index:666}
+#place{position:absolute;top:35px;left:600px;font-family:"微软雅黑";color: #FFFFFF;font-size: 22px;z-index:666}
+#slider{position: absolute;width: 774px;overflow: hidden;margin: 0px 0 0 38px;box-shadow: 5px 5px 10px #000a28}
+#slider li{position: absolute;top: 0;left: 0;}
+.caption{opacity: 0.8;background: #000;height: 33px;padding: 5px 0 0 0;color: #fff;text-align: center;font: 25px/1 '微软雅黑';z-index: 200;}
+.prev-link, .next-link{display: block;width: 24px;height: 24px;background-repeat: no-repeat;background-position: left top;position: absolute;bottom: 10px;z-index: 300;}
+.prev-link{left: 10px;background-image: url(prev.png );}
+.next-link{left: 40px;background-image: url(next.png );}
+.circle{display: block;width: 16px;height: 16px;background: url(circle-empty.png ) no-repeat left top;position: absolute;bottom: 10px;z-index: 300;}
+.circle-current{background-image: url(circle-full.png );}
+.rightbox{ width:415px; height:500px; background: url(img/rightbg.png) no-repeat; position:absolute; top:152px; left:828px; box-shadow:1px 1px 5px #ABABAB;}
+</style>
+<body>
+<div class="topbox">
+<div class="logobox"><img src="img/newlogo.png" width="360" height="100" alt=""/></div>
+<div id="timebox">2016/10/18  星期二  13:49:24</div>
+<div id="weather">  晴转多云  16℃-25℃</div>
+<div id="place">深圳</div>
+</div>
+ <div id="slider">
+<img src="img/1.jpg"  />
+<img src="img/2.jpg" />
+<img src="img/3.jpg" />
+</div>
+ <div class="rightbox"></div>
+
+ <!--回车跳转开始-->
+ 
+<script type="text/javascript" >
+      document.onkeydown=function(event){
+            var e = event || window.event || arguments.callee.caller.arguments[0];         
+             if(e && e.keyCode==13){ // enter 键
+                window.location.href="#"; //要做的事情
+            }
+        }; 
+</script>
+ <!--回车跳转结束-->
+<script src="js/jquery.min.js"></script>
+<script src="js/slider.jquery.js"></script>
+<script>
+$( '#slider' ).lateralSlider( {
+captionPadding: '0',
+captionHeight: 45
+} );
+</script>
+<!--地点获取开始并显示到#place-->
+<script src="js/jquery.js" type="text/javascript"></script>
+<script language="javascript" type="text/javascript" src="http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js"></script><!--使用新浪定位-->
+<script>
+$(document).ready(function(){
+  $("#place").text("" + remote_ip_info.city + ""); 
+});
+</script>
+<!--时间开始-->
+<script language=JavaScript>
+var enabled = 0; today = new Date();
+var day; var date;
+if(today.getDay()==0) day = " 星期日"
+if(today.getDay()==1) day = " 星期一"
+if(today.getDay()==2) day = " 星期二"
+if(today.getDay()==3) day = " 星期三"
+if(today.getDay()==4) day = " 星期四"
+if(today.getDay()==5) day = " 星期五"
+if(today.getDay()==6) day = " 星期六"
+</script>
+<script>setInterval("timebox.innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());",0);
+</script> 
+<script><!--
+var ns4up1 = (document.layers) ? 1 : 0;  // browser sniffer
+
+var ie4up1 = (document.all&&(navigator.appVersion.indexOf("MSIE 4") == -1)) ? 1 : 0;
+
+var ns6up1 = (document.getElementById&&!document.all) ? 1 : 0;
+findWeather();//初始化加载天气
+
+function nowclock() {
+if (!ns4up1 && !ie4up1 && !ns6up1) return false;
+var digital = new Date();
+var hours = digital.getHours();
+var minutes = digital.getMinutes();
+var seconds = digital.getSeconds();
+var day = digital.getDate();
+var month = digital.getMonth() + 1;
+var year = digital.getYear();
+var amOrPm = "AM";
+if (hours > 11) amOrPm = "PM";
+if (hours > 12) hours = hours - 12;
+if (hours == 0) hours = 12;
+if (minutes < 10) minutes = "0" + minutes;
+if (seconds < 10) seconds = "0" + seconds;
+if (day < 10) day = "0" + day;
+if (month < 10) month = "0" + month;
+dispTime = hours + ":" + minutes + ":" + seconds + "　" + amOrPm;
+dispDate = year + "年" + month + "月" + day+ "日, " ;
+if (ns4up1) {
+document.layers.nowTime.document.write(dispTime);
+document.layers.nowTime.document.close();
+document.layers.nowDate.document.write(dispDate);
+document.layers.nowDate.document.close();
+} else if (ns6up1){
+document.getElementById("nowTime").innerHTML = dispTime;
+document.getElementById("nowDate").innerHTML = dispDate;
+} else if (ie4up1){
+nowTime.innerHTML = dispTime;
+nowDate.innerHTML = dispDate;
+} setTimeout("nowclock()", 1000);
+} nowclock();
+
+//获取天气和温度开始
+function findWeather() {
+    var cityUrl = 'http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js';
+    $.getScript(cityUrl, function(script, textStatus, jqXHR) {
+        var citytq = remote_ip_info.city ;// 获取城市
+        var url = "http://php.weather.sina.com.cn/iframe/index/w_cl.php?code=js&city=" + citytq + "&day=0&dfc=3";
+        $.ajax({
+            url : url,
+            dataType : "script",
+            scriptCharset : "gbk",
+            success : function(data) {
+                var _w = window.SWther.w[citytq][0];
+                var _f= _w.f1+"_0.png";
+                if(new Date().getHours() > 17){
+                     _f= _w.f2+"_1.png";                
+                }
+                var img = "<img width='16px' height='16px' src='http://i2.sinaimg.cn/dy/main/weather/weatherplugin/wthIco/20_20/" +_f
+                + "' />";
+                var tq =  " " + img + " " + _w.s1 + " " + _w.t1 + "℃～" + _w.t2 + "℃  ";
+                //#weather自己修改,天气样式自己打断点调试
+                $('#weather').html(tq);
+            }
+        });
+    });
+}//获取天气和温度结
+	</script>
+    <!--时间结束--> 
+</body>
+</html>
