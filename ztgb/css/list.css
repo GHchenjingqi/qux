@@ -1,0 +1,113 @@
+﻿/*	作者：928828762@qq.com
+	时间：2017-12-15
+	描述：卓途学历网站  */
+	@charset "gb2312";
+.xuelibox{width: 100%;background: #eee;padding-top: 10px;padding-bottom: 50px;}
+.menuleft{width: 220px;float: left;}
+.slider-nav{width: 100%;height: auto;float: left;}
+.slider-nav h3,.contect h3{width: 100%;height: 52px;display: block;text-align: center;font: 22px/52px "微软雅黑";color: #fff;}
+.slider-nav ul{width: 100%;height: auto;}
+.slider-nav ul li{width: 40%;height: 42px;padding:5px 30%;margin-bottom: 1px;float: left;background: #fff;text-align: center;}
+.slider-nav ul li a{display: block;color: #333;font: 16px/42px "微软雅黑";}
+.slider-nav ul li:hover{background: #f6f6f6;}
+#act-slider{color: #4582FF;border-bottom: 2px solid #4582FF;}
+/*contect*/
+.contect{width: 100%;height: auto;float: left;}
+.contect div{width: 80%;height: auto;float: left;background: #fff;margin-bottom: 1px;padding: 15px 10%;}
+.contect div h5{font: 16px/1.5 "微软雅黑";font-weight: 600;}
+.contect div p{font: 14px/1.5 "微软雅黑";}
+/*ad*/
+.adimg{width: 100%;float: left;}
+.adimg a img{width: 100%;height: auto;float: left;margin-bottom: 5px;transition:all ease-in .5s;}
+.adimg a img:hover{transform: scale(1.05);border: 1px solid #4582FF;}
+/*right*/
+.adright{width: 228px;height: auto;}
+.hot,.bmform,.markbox{width: 100%;background: #fff;border: 1px solid #ddd;overflow: hidden;}
+.hot h3,.bmform h3,.markbox h3{width: 100%;height: 52px;display: block;text-align: center;font: 18px/52px "微软雅黑";color: #fff;position: relative;text-align: left;padding-left: 20%;}
+.hot h3 span,.bmform h3 span,.markbox h3 span{width: 5px;height: 20px; background:#fff;position: absolute;top: 16px;left: 15px;}
+.hot div{width: 100%;height: auto;padding: 10px 0;}
+.hot p{width: 90%;height: 30px;overflow: hidden;margin: 0 auto;}
+.hot p a{font: 14px/30px "微软雅黑";color: #333;}
+.hot p a:hover{color: #008AFF;}
+.bmform div{width: 90px;padding: 5px 5% 15px 5%;}
+.bmform div p{font: 14px/2 "微软雅黑";font-weight: 600;}
+.bmform div select{width: 200px;height: 36px;}
+.bmform div input{width: 196px;height: 34px;}
+#sub-bm{width: 200px;height: 40px;border: none;background: #4582FF;font: 16px/36px "微软雅黑"; color: #fff;margin-top: 10px;cursor: pointer;}
+#sub-bm:hover{background: #0948BB;}
+.markbox div{width: 90%;padding:10px 5% 15px 5%;}
+.markbox div p{float: left;margin-bottom: 10px;margin-right: 5px;}
+.markbox div p a{padding: 8px 10px;border: 1px solid #ddd;border-radius:4px;display: block;font: 12px "微软雅黑";color: #666;}
+/*zhongjian */
+.ctonbox{width: 792px;float: left;padding: 0 10px;margin-left: 10px;background: #fff;overflow: hidden;}
+.breadnav{width: 100%;height: 50px;border-bottom: 1px solid #ddd;}
+.breadnav h3{width: 100%;position: relative;padding-left:20px ;}
+.breadnav h3 span{width: 4px;height: 20px;background: #4582FF;position: absolute;top: 15px;left: 5px;}
+.breadnav h3 a{font: 14px/50px "微软雅黑";color: #000;font-weight: 600;text-decoration: underline;}
+.breadnav h3 a:hover{color: #008AFF;}
+.listbox ul {width: 100%;}
+.listbox ul li{width: 100%;height: 160px;border-bottom: 1px solid #ddd;}
+.listbox ul li a{display: block;}
+.listbox ul li a img{width: 224px;height: 126px;float: left;margin-top: 18px;}
+.listbox ul li a h3{margin-top: 30px;font: 14px/2 "微软雅黑";float: left;padding-left: 2%;font-weight: 600;color: #333;}
+.listbox ul li a p{float: left;width: 69%;padding-left: 2%;font: 12px/1.5 "微软雅黑";color: #666;}
+ #times{display: block;float: left;width: 60%;padding-left: 2%;padding-top: 10px;}
+ #times p{display: block;float: left;width: 30%;padding-left: 0;}
+ #times p:last-of-type{text-align: right;width: 35%;}
+ #times p:last-of-type a{color: #333;}
+ #times p:last-of-type a:hover{text-decoration: underline;color: #008AFF;}
+ /*page*/
+.page_div{margin-top: 20px;margin-bottom: 20px;font-size: 15px;font-family: "microsoft yahei";color: #666666;margin-right: 10px;padding-left: 20px;box-sizing: border-box;}	
+.page_div a{min-width: 30px;height: 28px;border: 1px solid #dce0e0!important;text-align: center;margin: 0 4px;cursor: pointer;line-height: 28px;color: #666666;font-size: 13px;display: inline-block;}
+#firstPage,#lastPage {width: 50px;color: #008AFF;border: 1px solid #008AFF!important;}
+#prePage,#nextPage {width: 70px;color: #008AFF;border: 1px solid #008AFF!important;}
+.page_div .current {background-color: #008AFF;border-color: #008AFF;color: #FFFFFF;}
+.totalPages {margin: 0 10px;}
+.totalPages span,.totalSize span {color: #0073A9;margin: 0 5px;}
+/*正文*/
+/*文章正文*/
+.articlebox{width: 100%;height: 100px;border-bottom: 1px solid #eee;}
+.articlebox h2{font: 25px/3 "微软雅黑";font-weight: 600;color: #000;}
+.articlebox div i span{font: 12px/2 "微软雅黑";color: #999;margin: 0 15px;padding-bottom: 15px;}
+.cton-artic{padding:15px 3% 0 3%;width: 94%;}
+.cton-artic p{font: 14px/1.5 "微软雅黑";color: #333;text-indent: 2em;margin-bottom: 15px;}
+.cton-artic p h3{font: 14px/1.5 "微软雅黑";color: #333;text-indent: 2em;margin-bottom: 15px;font-weight: 600;}
+.cton-artic p img{width: 530px;height: 240px;margin-left: 75px;}
+/*上下文章*/
+.groom{width: 94%;border-bottom: 1px solid #eee;border-top: 1px solid #eee;padding: 15px 3%;}
+.groom p{font: 14px/2 "微软雅黑";color: #000;font-weight: 600;}
+.groom p a{color: #008AFF;font-weight: 400;}
+.groom p a:hover{text-decoration: underline;}
+/*推荐阅读*/
+.groomlist{width:94%;border-top: 1px solid #eee;padding: 10px 3%;height: 128px;}
+.groomlist h3{font: 14px/2 "微软雅黑";font-weight: 600;color: #000;}
+.groomlist ul{width: 48%;float: left;margin-right: 4%;}
+.groomlist ul:last-of-type{margin-right: 0;}
+.groomlist ul li a{font: 12px/2 "微软雅黑";color: #333;}
+.groomlist ul li a:hover{color: #008AFF;text-decoration: underline;}
+/**/
+/*seacher*/  
+.searchcton{width: 100%;height: auto;background: #f5f5f5;padding: 15px 0;}
+.left-result{width: 960px;background: #fff;float: left;padding: 10px;}
+.left-result ul{width: 100%;}
+.left-result ul li{width: 96%;padding: 10px 2%;border-bottom: 1px solid #ddd;}
+.left-result ul li:hover{background: #f5f5f5;}
+.left-result ul li a h3{font: 16px/2 "微软雅黑";font-weight: 600;color: #000;}
+.left-result ul li a p{font: 14px/1.5 "微软雅黑";color: #999;}
+.left-result ul li a div{padding: 10px 0;}
+.left-result ul li a div span{font: 12px "微软雅黑";color: #666;}
+.right-reader{width: 284px;float: left;margin-left: 16px;}
+.right-ad{width: 100%;}
+.right-ad a{display: block;}
+.right-ad a img{width: 100%;margin-bottom: 5px;}
+.hot-reader{width: 100%;}
+.hot-reader h3{width: 100%;height:48px ;background: #4582FF;color: #fff;font: 18px/48px "微软雅黑";text-align: center;}
+.hot-reader p{width: 90%;margin: 0 auto;height: 24px;overflow: hidden;background: #fff;padding:5px 5%;}
+.hot-reader p a{font: 14px/24px "微软雅黑";color: #333;}
+.hot-reader p a:hover{text-decoration: underline;color: #008AFF;}
+.hot-reader ul{width: 90%;background: #fff;padding: 10px 5%;height: 110px;}
+.hot-reader ul li{width: 120px;height: 50px;background: #4582FF;margin-left:5px;margin-bottom: 5px;float: left;text-align: center;}
+.hot-reader ul li:hover{background: #0948BB;}
+.hot-reader ul li:nth-of-type(2){margin-right:0;}		
+.hot-reader ul li a{font: 16px/50px "微软雅黑";color: #fff;}  
+/*seacher end*/        

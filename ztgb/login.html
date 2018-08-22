@@ -1,0 +1,209 @@
+<!--弹框-->
+		<div class="boopbox">
+			<div class="main">
+				<div class="loginbox">
+				   <div class="logtop">
+				   	  <h3 id="actlog">登录</h3><h3 id="graylog">注册</h3><p title="关闭弹框，返回页面"></p>
+				   </div>
+				   <div class="logcton">
+				   	 <!--登录-->
+				   	 <div class="log">
+				   	 	<form action="" method="post">
+				   	 		<input type="text" class="log-in" name="name" id="" placeholder="请输入手机号" />
+				   	 		<input type="text" class="log-in" name="password" id="" placeholder="6-12位密码，区分大小写" />
+				   	 		<div class="forget">
+				   	 			<div class="l">
+				   	 				<input type="checkbox" name="log-check" checked="checked" value="1" /><p>7天免登陆</p>
+				   	 			</div>
+				   	 			<div class="r">
+				   	 				<a href="#forget" class="forgetshow" title="找回密码">忘记密码?</a>
+				   	 			</div>
+				   	 		</div>
+				   	 		<input type="submit" class="log-sub hand" value="登录"/>
+				   	 		<div class="log-other">
+				   	 			<p>其他方式登录：</p><a href="" class="qq"></a>
+				   	 		</div>
+				   	 	</form>
+				   	 </div>
+				   	 <!--注册-->
+				   	 <div class="reg hide">
+				   	 	<form action="" method="post">
+				   	 		<input type="text" class="log-in" name="name" id="" placeholder="请输入手机号" />
+				   	 		<input type="text" class="log-in" name="password" id="" placeholder="请设置6-12位密码，区分大小写" />
+				   	 		<div class="reg-code">
+				   	 			 <input type="text" name="code" class="codebox" placeholder="请输入验证码" maxlength="6" />
+                                 <a class="btn-code">获取验证码</a>
+                                 <input type="hidden" class="btn-img" id="captcha_mobile" name="captcha_mobile" value="g5a82nf6dmui57i2f9khaestd1">
+				   	 		</div>
+				   	 		<div class="reg-for">
+				   	 			<div class="l">
+				   	 				<input type="checkbox" name="reg-check" class="reg-check" checked="checked" /><p>同意<a title="注册协议" class="tpxy">卓途教育机构注册协议</a></p>
+				   	 			</div>
+				   	 		</div>
+				   	 		<input type="submit" class="reg-sub hand" value="注册"/>
+				   	 		<div class="log-other">
+				   	 			<p>其他方式登录：</p><a href="" class="qq"></a>
+				   	 		</div>
+				   	 	</form>
+				   	 </div>
+				   </div>
+				</div>
+				<!--忘记密码-->
+			    <div class="forgetbox hide">
+			    	<div class="logtop">
+				   	  <h3 id="actlog">忘记密码</h3><p title="关闭弹框，返回页面"></p>
+				   </div>
+				   <div class="forgetfm">
+				   	    <form action="" method="post">
+				   	 		<input type="text" class="log-in" name="name" id="" placeholder="请输入手机号" />
+				   	 		<input type="text" class="log-in" name="password" id="" placeholder="请重新设置6-12位密码，区分大小写" />
+				   	 		<div class="reg-code">
+				   	 			 <input type="text" name="code" class="codebox" placeholder="请输入验证码" maxlength="6" />
+                                 <a class="btn-code">获取验证码</a>
+                                 <input type="hidden" class="btn-img" id="captcha_mobile" name="captcha_mobile" value="g5a82nf6dmui57i2f9khaestd1">
+				   	 		</div>
+				   	 		<input type="submit" class="log-sub hand" value="修改密码"/>
+				   	 	</form>
+				   </div>
+			    </div>
+			    <!--注册协议-->
+				<div class="gvrp hide">
+			    	<div class="gvrptop">
+				   	  <h3 id="actlog">卓途注册协议</h3><p title="关闭弹框，返回页面"></p>
+				   </div>
+			    	<div class="gv">
+			    		<h3>1、郑州卓途教育咨询有限公司服务条款的确认和接纳</h3><p>郑州卓途教育咨询有限公司的各项网络服务的所有权、运作权归郑州卓途教育咨询有限公司。郑州卓途教育咨询有限公司提供的服务将完全按照其发布的章程、服务条款和操作规则严格执行。您必须完全同意所有服务条款并完成注册（报名）程序。
+						  </p>
+						  <h3> 2、服务简介</h3><p>基于郑州卓途教育咨询有限公司所提供的网络服务的重要性，学员应同意：<br />
+							（1）提供详尽、准确的个人资料。<br />
+							（2）不断更新注册（报名）资料，符合及时、详尽、准确的要求。郑州卓途教育咨询有限公司不公开学员的姓名、地址、电子邮箱和笔名，<br />
+							除以下情况外：<br />
+							（1）学员授权郑州卓途教育咨询有限公司透露这些信息。<br />
+							（2）相应的法律及程序要求郑州卓途教育咨询有限公司提供学员的个人资料。如果学员提供的资料包含有不正确的信息，郑州卓途教育咨询有限公司保留结束学员使用网络服务资格的权利。
+							</p>
+							<h3>3、服务条款的修改和服务修订</h3><p>郑州卓途教育咨询有限公司有权在必要时修改服务条款，郑州卓途教育咨询有限公司服务条款一旦发生变动，将会在重要页面上提示修改内容。如果学员继续享用网络服务，则视为接受服务条款的变动。
+							</p>
+							<h3>4、学员代码、密码及使用限制</h3><p>学员一旦注册（报名）成功，成为卓途教育的合法学员，将得到一个密码和学员代码，学员将对学员代码、密码安全及学员代码的使用负全部责任；同时，每个学员的学习代码仅限学员个人私自使用，学员以任何方式与任何第三方共享学习代码或公开学习课程（包括但不限于向任何第三方透露学习课程、与他人共享学习代码、将自己的学习代码提供给第三方使用、将学习课程公开播放或以任何方式供多人同时使用）都是严格禁止的；上述情况一旦发生，我司将立即停止违规代码的学习权限，同时我司会进一步追究违规人员的法律责任，包含不限于追偿损失、司法追责等。
+							</p>
+							<h3>5、对学员信息的存储和限制</mark></h3><p>郑州卓途教育咨询有限公司不对学员所发布信息的删除或储存失败负责。郑州卓途教育咨询有限公司有判定学员的行为是否符合郑州卓途教育咨询有限公司服务条款的要求和精神的保留权利，如果学员违背了服务条款的规定，郑州卓途教育咨询有限公司有中断对其提供网络服务的权利。
+							</p>
+							<h3>6、学员管理严禁发表、散布、传播任何反动、色情及违反国家安全、扰乱社会秩序等有害信息，学员需对自己在网上的行为承担法律责任。学员若在郑州卓途教育咨询有限公司上散布和传播反动、色情或其他违反国家法律的信息，郑州卓途教育咨询有限公司的系统记录将作为学员违反法律的证据。
+						    </h3>
+							<h3>7、学员咨询</h3>
+							　　<p id="ns">在如下时间里您可拨打网校的客服咨询电话：</p>
+							　　<p>免费咨询热线：0371-60918733</p>
+							　　<p>咨询时间：全天24小时服务（周六、周日及节假日不休息）</p>
+							<h3>8、网络服务内容的所有权</h3><p>
+							　　郑州卓途教育咨询有限公司定义的网络服务内容包括：文字、软件、声音、图片、录像、图表、邮件及广告中的全部内容，郑州卓途教育咨询有限公司拥有以上内容的完全版权，严禁任何个人或单位在未经郑州卓途教育咨询有限公司许可的情况下对这些内容进行翻版、复制、转载、篡改等一切用于商业活动的行为；郑州卓途教育咨询有限公司的学员/会员账号只为本网校的个人注册用户本人所专有，严禁一个账号多人使用，如若发现上述情况，郑州卓途教育咨询有限公司将有权停止其账号使用，并没收其非法所得，并根据情节的严重程度对其实行相应罚款或述诸法律。
+							</p>
+							<h3>9、免责条款</h3>
+							<p>当本网站以链接形式推荐其他网站内容时，由于本站并不控制相关网站和资源，因此访问者需理解并同意，本站并不对这些网站或资源的可用性负责，且不保证从这些网站获取的任何内容、产品、服务或其他材料的真实性、合法性，对于任何因使用或信赖从此类网站或资源上获取的内容、产品、服务或其他材料而造成（或声称造成）的任何直接或间接损失，本站均不承担任何责任。 由于用户将个人密码告知他人或与他人共享注册帐户，由此导致的任何个人资料泄露，本网站不负任何责任。 任何由于黑客攻击、计算机病毒侵入或发作、因政府管制而造成的暂时性关闭等影响网络正常经营的不可抗力而造成的个人资料泄露、丢失、被盗用、被窜改或不能正常看课等，本网站均得免责。本网站如因系统维护或升级而需暂停服务时，将事先公告。若因线路及非本公司控制范围外的硬件故障或其它不可抗力而导
+							</p>
+							<p><mark>本声明未涉及的问题参见国家有关法律法规，当本声明与国家法律法规冲突时，以国家法律法规为准。</mark></p>
+							
+							<div><input type="checkbox" name="gv-check" class="gv-check" checked="checked"  /><span>我同意此协议</span>
+								<button>继续注册</button>
+							</div>
+			    	</div>
+			    </div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(function(){ 
+				
+				var wh = $(window).height();
+				var bh = $(".loginbox").height();
+				var ph = (wh-bh)/2;
+				$(".loginbox").css("margin-top",ph);
+				$(".forgetbox").css("margin-top",ph);
+				$(".gvrp").css("margin-top",ph);
+				$(".logtop").children().eq(1).click(function(){
+					$(this).removeAttr("id","graylog");
+					$(this).attr("id","actlog");
+					$(this).siblings("h3").removeAttr("id","actlog");
+					$(this).siblings("h3").attr("id","graylog");
+					$(".log").hide();
+					$(".reg").show();
+				})
+				
+				$(".logtop").children().eq(0).click(function(){
+					$(this).removeAttr("id","graylog");
+					$(this).attr("id","actlog");
+					$(this).siblings("h3").removeAttr("id","actlog");
+					$(this).siblings("h3").attr("id","graylog");
+					$(".reg").hide();
+					$(".log").show();
+				})
+				$(".logtop p").click(function(){
+					$(".boopbox").hide();
+					$(".loginbox").hide();
+					
+				})
+				
+				$(".gvrptop p").click(function(){
+					$(".boopbox").hide();
+					$(".gvrp").hide();
+					
+				})
+				//判断协议是否同意,当check为假的时候，按钮选择可选，方可注册
+				check();
+				$(".gv-check").change(function(){
+					check();
+				})
+				$(".reg-check").change(function(){
+					check();
+				})
+				//check函数
+				function check(){
+					//协议check
+					if($(".gv-check").is(':checked')){
+						$(".gv div button").attr("disabled", false);
+						   $(".gv div button").click(function(){
+						   	   $(".gvrp").hide();
+						   	   $(".loginbox").show();
+						   	   $(".reg").show();
+							   $(".log").hide();
+						   })
+					}else{
+						$(".gv div button").attr("disabled", true);
+					}
+					//注册页面check
+					if($(".reg-check").is(':checked')){
+//					console.log(1);
+						$(".reg-sub").attr("disabled", false);
+						$(".reg-sub").click(function(){
+						   	   $(".gvrp").hide();
+						   	   $(".loginbox").show();
+						   	   $(".reg").show();
+							   $(".log").hide();
+						   })
+						//按钮选择可选，方可注册，在这个下面写入注册信息数据库；
+						
+					}else{
+						$(".reg-sub").attr("disabled", true);//禁用状态开启
+					}
+					
+				}
+				
+				//忘记密码
+				$(".forgetshow").click(function(){
+					$(".boop").load("login.html",function(){ 
+						$(".forgetbox").show();
+						$(".loginbox").hide();
+						$(".gvrp").hide();
+					});
+				})
+				//查看注册协议
+				$(".tpxy").click(function(){
+					$(".boop").load("login.html",function(){ 
+						$(".forgetbox").hide();
+						$(".loginbox").hide();
+						$(".gvrp").show();
+					});
+				})
+			})
+		</script>
+		
+		
+		
+
