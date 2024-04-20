@@ -3,6 +3,7 @@
     position: fixed;
     width: 1280px;
     height: 720px;
+   overflow: hidden;
     top: 0px;
     left: 0px;
     z-index: 0;
